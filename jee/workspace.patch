@@ -1,0 +1,1408 @@
+diff --git a/jee/.classpath b/jee/.classpath
+new file mode 100644
+index 0000000..ea8c28f
+--- /dev/null
++++ b/jee/.classpath
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<classpath>
++	<classpathentry kind="src" path="src"/>
++	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
++	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
++	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
++	<classpathentry kind="lib" path="C:/oraclexe/app/oracle/product/11.2.0/server/jdbc/lib/ojdbc6.jar"/>
++	<classpathentry kind="output" path="build/classes"/>
++</classpath>
+diff --git a/jee/.gitignore b/jee/.gitignore
+new file mode 100644
+index 0000000..84c048a
+--- /dev/null
++++ b/jee/.gitignore
+@@ -0,0 +1 @@
++/build/
+diff --git a/jee/.project b/jee/.project
+new file mode 100644
+index 0000000..61d82a9
+--- /dev/null
++++ b/jee/.project
+@@ -0,0 +1,31 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<projectDescription>
++	<name>jee</name>
++	<comment></comment>
++	<projects>
++	</projects>
++	<buildSpec>
++		<buildCommand>
++			<name>org.eclipse.jdt.core.javabuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
++			<name>org.eclipse.wst.common.project.facet.core.builder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
++			<name>org.eclipse.wst.validation.validationbuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++	</buildSpec>
++	<natures>
++		<nature>org.eclipse.jem.workbench.JavaEMFNature</nature>
++		<nature>org.eclipse.wst.common.modulecore.ModuleCoreNature</nature>
++		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
++		<nature>org.eclipse.jdt.core.javanature</nature>
++		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
++	</natures>
++</projectDescription>
+diff --git a/jee/.settings/.jsdtscope b/jee/.settings/.jsdtscope
+new file mode 100644
+index 0000000..5cee5ac
+--- /dev/null
++++ b/jee/.settings/.jsdtscope
+@@ -0,0 +1,12 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<classpath>
++	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="WebContent"/>
++	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.JRE_CONTAINER"/>
++	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.WebProject">
++		<attributes>
++			<attribute name="hide" value="true"/>
++		</attributes>
++	</classpathentry>
++	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.baseBrowserLibrary"/>
++	<classpathentry kind="output" path=""/>
++</classpath>
+diff --git a/jee/.settings/org.eclipse.jdt.core.prefs b/jee/.settings/org.eclipse.jdt.core.prefs
+new file mode 100644
+index 0000000..295926d
+--- /dev/null
++++ b/jee/.settings/org.eclipse.jdt.core.prefs
+@@ -0,0 +1,7 @@
++eclipse.preferences.version=1
++org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
++org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.8
++org.eclipse.jdt.core.compiler.compliance=1.8
++org.eclipse.jdt.core.compiler.problem.assertIdentifier=error
++org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
++org.eclipse.jdt.core.compiler.source=1.8
+diff --git a/jee/.settings/org.eclipse.wst.common.component b/jee/.settings/org.eclipse.wst.common.component
+new file mode 100644
+index 0000000..e13728b
+--- /dev/null
++++ b/jee/.settings/org.eclipse.wst.common.component
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
++    <wb-module deploy-name="jee">
++        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
++        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
++        <property name="context-root" value="jee"/>
++        <property name="java-output-path" value="/jee/build/classes"/>
++    </wb-module>
++</project-modules>
+diff --git a/jee/.settings/org.eclipse.wst.common.project.facet.core.xml b/jee/.settings/org.eclipse.wst.common.project.facet.core.xml
+new file mode 100644
+index 0000000..3d340aa
+--- /dev/null
++++ b/jee/.settings/org.eclipse.wst.common.project.facet.core.xml
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<faceted-project>
++  <fixed facet="wst.jsdt.web"/>
++  <fixed facet="java"/>
++  <fixed facet="jst.web"/>
++  <installed facet="jst.web" version="3.1"/>
++  <installed facet="wst.jsdt.web" version="1.0"/>
++  <installed facet="java" version="1.8"/>
++</faceted-project>
+diff --git a/jee/.settings/org.eclipse.wst.jsdt.ui.superType.container b/jee/.settings/org.eclipse.wst.jsdt.ui.superType.container
+new file mode 100644
+index 0000000..3bd5d0a
+--- /dev/null
++++ b/jee/.settings/org.eclipse.wst.jsdt.ui.superType.container
+@@ -0,0 +1 @@
++org.eclipse.wst.jsdt.launching.baseBrowserLibrary
+\ No newline at end of file
+diff --git a/jee/.settings/org.eclipse.wst.jsdt.ui.superType.name b/jee/.settings/org.eclipse.wst.jsdt.ui.superType.name
+new file mode 100644
+index 0000000..05bd71b
+--- /dev/null
++++ b/jee/.settings/org.eclipse.wst.jsdt.ui.superType.name
+@@ -0,0 +1 @@
++Window
+\ No newline at end of file
+diff --git a/jee/WebContent/META-INF/MANIFEST.MF b/jee/WebContent/META-INF/MANIFEST.MF
+new file mode 100644
+index 0000000..5e94951
+--- /dev/null
++++ b/jee/WebContent/META-INF/MANIFEST.MF
+@@ -0,0 +1,3 @@
++Manifest-Version: 1.0
++Class-Path: 
++
+diff --git a/jee/WebContent/WEB-INF/web.xml b/jee/WebContent/WEB-INF/web.xml
+new file mode 100644
+index 0000000..eb2f12d
+--- /dev/null
++++ b/jee/WebContent/WEB-INF/web.xml
+@@ -0,0 +1,12 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
++  <display-name>jee</display-name>
++  <welcome-file-list>
++    <welcome-file>index.html</welcome-file>
++    <welcome-file>index.htm</welcome-file>
++    <welcome-file>index.jsp</welcome-file>
++    <welcome-file>default.html</welcome-file>
++    <welcome-file>default.htm</welcome-file>
++    <welcome-file>default.jsp</welcome-file>
++  </welcome-file-list>
++</web-app>
+\ No newline at end of file
+diff --git a/jee/src/bank/AccountBean.java b/jee/src/bank/AccountBean.java
+new file mode 100644
+index 0000000..04a9490
+--- /dev/null
++++ b/jee/src/bank/AccountBean.java
+@@ -0,0 +1,104 @@
++package bank;
++
++import global.Constants;
++
++/**
++ * @date : 2016. 6. 16.
++ * @author : 최인철
++ * @file_name : Account.java
++ * @story :
++ */
++public class AccountBean { // 클래스 ,헤더 접근제한 -클래스 종류
++	private int accountNo; // 인스턴스 변수는 초기화 하지 않는다.
++	private String name;
++	private int money;
++	
++	private String id;
++	private String pw;
++	
++	/* (non-Javadoc)
++		 * @see java.lang.Object#clone()
++		 */
++			
++	public AccountBean(){
++		// default constructor 기본 생성자
++		// 생성자 오버로딩
++		
++	}	
++	public AccountBean(String name, String id, String pw) {
++		setAccountNo();
++		this.name = name;
++		this.id =id;
++		this.pw=pw;
++		
++	}
++	public void setAccountNo() {
++		// TODO Auto-generated method stub
++		this.accountNo=(int) ((Math.random() * 999999) + 100000);
++		if(this.accountNo > 999999){
++			this.accountNo -= 100000;
++		}
++	}
++
++	
++	public void setMoney(int money) {
++		this.money += money;
++	}
++
++	public void setPw(String pw) {
++		this.pw = pw;
++	}
++
++	public int getAccountNo() {
++		return this.accountNo;
++	}
++	public void setName(String name) {
++		this.name= name;
++		// TODO Auto-generated method stub
++
++	}
++	public void setAccountNo(int accountNo) {
++		this.accountNo = accountNo;
++	}
++	public void setId(String id) {
++		this.id = id;
++	}
++	public String getName() {
++		return this.name;
++	}
++
++	public int getMoney() {
++		return this.money;
++
++	}
++	public String getId() {
++		return this.id;
++	}
++
++	public String getPw() {
++		return this.pw;
++	}
++	
++		/*if (output > this.money){
++			JOptionPane.showMessageDialog(null, "출금액이 잔액 보다 큽니다");
++			
++		}else {
++			this.money -= output;
++			result = String.valueOf(money);	
++		}
++*/
++
++	/* (non-Javadoc)
++	 * @see java.lang.Object#toString()
++	 */
++	@Override
++	public String toString() {
++		return Constants.BANK_NAME+
++				"계좌번호" + accountNo + ""
++				+ ", 이름=" + name + ""
++				+ ", 잔액=" + money + ""
++				+ ", id=" + id +"\n";
++				
++	}
++
++}
+diff --git a/jee/src/bank/AccountService.java b/jee/src/bank/AccountService.java
+new file mode 100644
+index 0000000..d5ad99b
+--- /dev/null
++++ b/jee/src/bank/AccountService.java
+@@ -0,0 +1,33 @@
++/**
++ * 
++ */
++package bank;
++
++/**
++ * @date   : 2016. 6. 20.
++ * @author : 최인철
++ * @file_name : Accountservice.java
++ * @story : 
++*/
++public interface AccountService {
++	// 1.개설 2.입금 3.조회 4.출금 5.통장내역
++		// 1.개설
++		public abstract void openAccount(String name,String id, String pw);
++		
++		// 2.입금
++		public void deposit(int inputMoney);	
++		
++		// 3.조회
++		public void findAccount() ;
++		// 4.출금
++		public  String withdraw(int output);
++		//5.통장내역
++		public String showAccount() ;
++		
++		// 6.해지
++		public String deleteAccount();	
++		
++		
++	}
++
++
+diff --git a/jee/src/bank/AccountServiceImpl.java b/jee/src/bank/AccountServiceImpl.java
+new file mode 100644
+index 0000000..b4fea48
+--- /dev/null
++++ b/jee/src/bank/AccountServiceImpl.java
+@@ -0,0 +1,78 @@
++package bank;
++
++/**
++ * @date   : 2016. 6. 20.
++ * @author : 최인철
++ * @file_name : accountServiceImpl.java
++ * @story : 계좌 인터페이스
++*/
++public class AccountServiceImpl implements AccountService {
++
++	AccountBean account ;
++	//1. 개설
++	public void openAccount(String name, String id, String pw) {
++		// TODO Auto-generated method stub
++		
++		account = new AccountBean(name,id,pw);
++	}
++
++	/* (non-Javadoc)
++	 * @see bank.Accountservice#deposit(int)
++	 */
++	// 2. 입금
++	public void deposit(int inputMoney) {
++		// TODO Auto-generated method stub
++			int money =account.getMoney();
++			money += inputMoney ;
++			account.setMoney(money);
++
++	}
++	/* (non-Javadoc)
++	 * @see bank.Accountservice#findAccount()
++	 */
++	@Override
++	// 3. 조회
++	public void findAccount() {
++		// TODO Auto-generated method stub
++		
++	}
++
++	/* (non-Javadoc)
++	 * @see bank.Accountservice#withdraw(int)
++	 */
++	@Override
++	// 4. 출금
++	public String withdraw(int output) {
++		// TODO Auto-generated method stub
++		String result ="잔액 부족" ;
++		int money =account.getMoney();
++		if (output <= money) {
++			money -=output;	
++			account.setMoney(money);
++			result = String.valueOf(account.getMoney());
++		}
++		return result;
++	}
++
++	/* (non-Javadoc)
++	 * @see bank.Accountservice#showAccount()
++	 */
++	@Override
++	//5 통장 내역
++	public String showAccount() {
++		// TODO Auto-generated method stub
++		return null;
++	}
++
++	/* (non-Javadoc)
++	 * @see bank.Accountservice#deleteAccount()
++	 */
++	@Override
++	//6. 해지
++	public String deleteAccount() {
++		account = null;	
++		return "해지";
++		// TODO Auto-generated method stub
++	}
++
++}
+diff --git a/jee/src/bank/Bank.java b/jee/src/bank/Bank.java
+new file mode 100644
+index 0000000..91b9eb9
+--- /dev/null
++++ b/jee/src/bank/Bank.java
+@@ -0,0 +1,14 @@
++/**
++ * 
++ */
++package bank;
++
++/**
++ * @date   : 2016. 6. 15.
++ * @author : 최인철
++ * @file_name : Bank.java
++ * @story : 
++*/
++public class Bank {
++	
++}
+diff --git a/jee/src/bank/BankService.java b/jee/src/bank/BankService.java
+new file mode 100644
+index 0000000..c5fff39
+--- /dev/null
++++ b/jee/src/bank/BankService.java
+@@ -0,0 +1,26 @@
++package bank;
++
++import java.util.List;
++
++public interface BankService {
++	// CREAT 11.개설
++			public abstract void openAccount(AccountBean acc);
++			//list.add(bean);
++			// READ 12.조회 (전체 리스트)
++			public List<AccountBean> list() ;
++			//READ 13.계좌번호
++			public AccountBean findByAccountNo(String account ) ;
++			// REWAD 14. 조회(이름)
++			public List<AccountBean> findByName(String name) ;
++			// READ 15. 조회(전체통장수)
++			public int count() ;
++			// public  String withdraw(int output);
++			//16.통장내역
++			public void showAccount() ;
++			//17. UPDATE
++			public String updateAccount(AccountBean bean);
++			// 18.해지
++			public String deleteAccount(String account);
++
++			
++}
+diff --git a/jee/src/bank/BankServiceImpl.java b/jee/src/bank/BankServiceImpl.java
+new file mode 100644
+index 0000000..1b4b98e
+--- /dev/null
++++ b/jee/src/bank/BankServiceImpl.java
+@@ -0,0 +1,100 @@
++package bank;
++
++import java.util.ArrayList;
++import java.util.List;
++import java.util.Vector;
++
++public class BankServiceImpl implements BankService {
++	List<AccountBean> list = new Vector<AccountBean>();
++
++	@Override
++	public void openAccount(AccountBean bean) {
++		// TODO Auto-generated method stub
++		list.add(bean);
++
++	}
++
++	@Override
++	public List<AccountBean> list() {
++		return list;
++
++		// TODO Auto-generated method stub
++
++	}
++
++	@Override
++	public AccountBean findByAccountNo(String account) {
++		AccountBean acc = new AccountBean();
++		int i = 0;
++		for (; i < list.size(); i++) {
++			if (account.equals(String.valueOf(list.get(i).getAccountNo()))) {
++			acc =	list.get(i);
++				break;
++			}
++
++		}
++		return acc;
++
++		// TODO Auto-generated method stub
++
++	}
++
++
++	@Override
++	public int count() {
++		return list.size();
++		// TODO Auto-generated method stub
++
++	}
++
++	@Override
++	public void showAccount() {
++		// TODO Auto-generated method stub
++
++	}
++
++	@Override
++	public String deleteAccount(String delete) {
++		// TODO Auto-generated method stub
++		String result ="";
++		AccountBean temp1 =this.findByAccountNo(delete);
++		if (temp1.getId()==null) {
++			result ="계좌 번호가 존재하지 않습니다.";
++			
++		}else{
++			list.remove(temp1);
++			result = "계좌가 삭제 되었습니다.";
++		}
++		return result;
++	}
++	@Override
++	public String updateAccount(AccountBean bean) {
++		// TODO Auto-generated method stub
++		String result ="";
++		AccountBean temp =this.findByAccountNo(String.valueOf(bean.getAccountNo()));
++		if (temp.getId()==null) {
++			result ="계좌 번호가 존재하지 않습니다.";
++			
++		}else{
++			temp.setPw(bean.getPw());
++			result = "비밀번호가 변경 되었습니다.";
++		}
++		return result;
++	}
++
++	@Override
++	public List<AccountBean> findByName(String name) {
++		List<AccountBean> accName = new ArrayList<AccountBean>();
++		int i = 0;
++		for (; i < list.size(); i++) {
++			if (name.equals(list.get(i).getName())) {
++			accName .add(list.get(i));
++				
++			}
++
++		}
++		// TODO Auto-generated method stub
++		return accName;
++	}
++
++}
+diff --git a/jee/src/bank/Bankcontroller.java b/jee/src/bank/Bankcontroller.java
+new file mode 100644
+index 0000000..b465585
+--- /dev/null
++++ b/jee/src/bank/Bankcontroller.java
+@@ -0,0 +1,109 @@
++package bank;
++
++import java.util.List;
++
++import javax.swing.JOptionPane;
++
++/**
++ * @date : 2016. 6. 15.
++ * @author : 최인철
++ * @file_name : Bankcontroller.java
++ * @story :
++ */
++public class Bankcontroller {
++	public static void main(String[] args) {
++		int ok=0;
++		String spec ="";
++		AccountService service = new AccountServiceImpl();
++		AccountBean bean = new AccountBean();
++		BankService bankService = new BankServiceImpl();
++
++		while (true) {
++
++			switch (JOptionPane.showInputDialog(null, "1.개설 2.입금 3.조회 4.출금 5.통장내역 6.해지 \n"
++					+ "관리자 모드 11.개설 12.조회 13. 조회(계좌번호) 14.이름 조회 15.조회(전체통장) \n "
++					+ "16.비밀번호 변경 17. 삭제 0.종료:")) {
++
++			case "1":
++				spec = JOptionPane.showInputDialog("이름,ID,PW");
++			
++				String[] specArr= spec.split(",");
++				service.openAccount(specArr[0],specArr[1],specArr[2]);
++				
++				break ;
++			case "2":
++				String inputMoney = JOptionPane.showInputDialog("입금액 ? ");
++		//		account.setMoney(Integer.parseInt(inputMoney));
++				service.deposit(Integer.parseInt(inputMoney)) ;
++				break;
++			case "3":
++	//			JOptionPane.showMessageDialog(null, service.findAccount());
++				break;
++			case "4":
++				String output = JOptionPane.showInputDialog("출금액 ? ");
++				service.withdraw(Integer.parseInt(output));
++				JOptionPane.showMessageDialog(null, service.withdraw(Integer.parseInt(output)));
++				
++				break;
++			case "5":
++				JOptionPane.showMessageDialog(null,service.showAccount());
++				break;
++			case "6":
++				JOptionPane.showMessageDialog(null,service.deleteAccount());
++				break;
++			case "11":
++				String list = JOptionPane.showInputDialog("이름,ID,PW");
++				
++				String[] listArr= list.split(",");
++	//			listArr = new ArrayList<AccountBean>();
++//				service.openAccount(listArr[0],listArr[1],listArr[2]);
++				AccountBean acc = new AccountBean();
++				acc.setAccountNo();
++				acc.setName(listArr[0]);
++				acc.setId(listArr[1]);
++				acc.setPw(listArr[2]);
++				bankService.openAccount(acc);
++				break ;
++			case "12":
++				// 조회
++				JOptionPane.showMessageDialog(null, bankService.list());
++				break;
++			case "13":
++				// 계좌번호 조회
++				String searchAccount=JOptionPane.showInputDialog("검색 계좌 번호 입력하세요");
++				bankService.findByAccountNo(searchAccount);
++				JOptionPane.showMessageDialog(null, bankService.findByAccountNo(searchAccount));
++				break;
++			case "14":
++				List<AccountBean> searchName=bankService.findByName(JOptionPane.showInputDialog("검색 이름 입력하세요"));
++					
++				JOptionPane.showMessageDialog(null,(searchName.isEmpty()?"검색하는 이름이 없습니다":searchName.toString()));
++				// 이름 조회
++				break;
++			case "15":
++				JOptionPane.showMessageDialog(null, bankService.count()+"개");
++				break;
++			case "16": 
++				String changeAccount=JOptionPane.showInputDialog("변경할  계좌 번호, 비밀번호 입력하세요");
++				String[] changeArr=changeAccount.split(",");
++				bean.setAccountNo(Integer.parseInt(changeArr[0]));
++				bean.setPw(changeArr[1]);
++				
++				JOptionPane.showMessageDialog(null, bankService.updateAccount(bean));
++				
++				break;
++			case "17":
++			String deleteAcc=JOptionPane.showInputDialog("삭제할  계좌 번호 입력하세요");
++			// 삭제 조회
++			JOptionPane.showMessageDialog(null, bankService.deleteAccount(deleteAcc));
++			 break;
++			
++			case "0":
++				JOptionPane.showConfirmDialog(null, "close?");
++				
++				return;
++
++			}
++		}
++	}
++}
+diff --git a/jee/src/global/Constants.java b/jee/src/global/Constants.java
+new file mode 100644
+index 0000000..e343750
+--- /dev/null
++++ b/jee/src/global/Constants.java
+@@ -0,0 +1,17 @@
++package global;
++
++/**
++ * @date   : 2016. 6. 17.
++ * @author : 최인철
++ * @file_name : Constants.java
++ * @story : 
++*/
++public class Constants {
++	public final static String SCHOOL_NAME = "한빛학원"; // 변경 불가능한 초기 고정값
++	public final static String BANK_NAME="한빛은행";
++	public final static String ORACLE_DRIVER="oracle.jdbc.driver.OracleDriver";
++	public final static String ORACLE_URL="jdbc:oracle:thin:@localhost:1521:xe";
++	public final static String ORACLE_ID="hanbit";
++	public final static String ORACLE_PW="hanbit";
++	
++}
+diff --git a/jee/src/global/FileEx.java b/jee/src/global/FileEx.java
+new file mode 100644
+index 0000000..3318e40
+--- /dev/null
++++ b/jee/src/global/FileEx.java
+@@ -0,0 +1,95 @@
++/**
++ * 
++ */
++package global;
++
++import java.io.BufferedReader;
++import java.io.BufferedWriter;
++import java.io.File;
++import java.io.FileReader;
++import java.io.FileWriter;
++import java.io.IOException;
++
++import javax.print.attribute.standard.JobKOctetsProcessed;
++import javax.swing.JOptionPane;
++
++/**
++ * @date :2016. 6. 30.
++ * @author :최인철
++ * @file : FileEx.java
++ * @story :
++ */
++public class FileEx {
++	public static void main(String[] args) {
++		File file = null;
++		FileWriter fw = null;
++		FileReader fr =null;
++		BufferedWriter bw = null;
++		BufferedReader br= null;
++		String msg ="";
++		try {
++			while (true) {
++				switch (JOptionPane.showInputDialog("1.생성 2.쓰기 3.읽기 4.수정 5.삭제 0.종료")) {
++				case "1":
++					String fileName = JOptionPane.showInputDialog("파일명");
++					file = new File("C:\\eclipse\\eclipse\\workspace\\" + fileName + ".txt");
++					fw = new FileWriter(file,true);
++					fr = new FileReader(file);
++					bw = new BufferedWriter(fw);
++					br = new BufferedReader(fr);
++					break;
++				case "2":
++					msg =JOptionPane.showInputDialog("message");
++					bw.write(msg);
++					bw.newLine();
++					fw.flush();
++					bw.flush();
++					break;
++				case "3":
++					while ((msg= br.readLine()) !=null) {
++						JOptionPane.showMessageDialog(null, msg);
++						
++					}
++					br.close();
++					break;
++				case "4":
++					String updateFileName=JOptionPane.showInputDialog("수정 파일명");
++					File updateFile = new File("C:\\eclipse\\eclipse\\workspace\\"+updateFileName+".txt");
++					bw = new BufferedWriter(new FileWriter(updateFile));
++					String updatemsg =JOptionPane.showInputDialog("수정된 메세지");
++					break;
++				case "5":
++					String delFileName=JOptionPane.showInputDialog("삭제 파일명");
++					File delFile = new File("C:\\eclipse\\eclipse\\workspace\\"+delFileName+".txt");
++					delFile.delete();
++					break;
++				case "0":
++					fw.close();
++					fr.close();
++					bw.close();
++					br.close();
++					return;
++
++				default:
++					break;
++				}
++			}
++		} catch (IOException e) {
++			// TODO Auto-generated catch block
++			e.printStackTrace();
++		} finally{
++			try {
++				fw.flush();
++				bw.flush();
++				fw.close();
++				fr.close();
++				bw.close();
++				br.close();
++			} catch (IOException e) {
++				// TODO Auto-generated catch block
++				e.printStackTrace();
++			}
++		}
++
++	}
++}
+diff --git a/jee/src/global/JDBCTest.java b/jee/src/global/JDBCTest.java
+new file mode 100644
+index 0000000..48c4725
+--- /dev/null
++++ b/jee/src/global/JDBCTest.java
+@@ -0,0 +1,47 @@
++
++package global;
++
++import java.sql.Connection;
++import java.sql.DriverManager;
++import java.sql.ResultSet;
++import java.sql.SQLException;
++import java.sql.Statement;
++import java.util.ArrayList;
++import java.util.List;
++
++/**
++ *@date    :2016. 6. 30.
++ *@author  :최인철
++ *@file    : JDBCTest.java
++ *@story  :
++ */
++public class JDBCTest {
++	public static void main(String[] args) {
++		Connection con=null;
++		Statement stmt=null;
++		ResultSet rs = null; //set을 상속
++		String sql = "select * from test",result="";
++		List<String> list = new ArrayList<String>();
++		try {
++			Class.forName(Constants.ORACLE_DRIVER);
++			con = DriverManager.getConnection(
++					Constants.ORACLE_URL,
++					Constants.ORACLE_ID,
++					Constants.ORACLE_PW);
++			
++			stmt = con.createStatement();
++			rs = stmt.executeQuery(sql);
++			while (rs.next()) {
++				result = rs.getString("id");
++				list.add(result);
++			}
++		} catch (ClassNotFoundException e) {
++			// TODO Auto-generated catch block
++			e.printStackTrace();
++		} catch (SQLException e) {
++			// TODO Auto-generated catch block
++			e.printStackTrace();
++		}
++		System.out.println(list);
++	}
++}
+diff --git a/jee/src/grade/GradeBean.java b/jee/src/grade/GradeBean.java
+new file mode 100644
+index 0000000..045bce3
+--- /dev/null
++++ b/jee/src/grade/GradeBean.java
+@@ -0,0 +1,62 @@
++package grade;
++
++public class GradeBean {
++	private int kor, eng, math;
++	private String name;
++
++	public GradeBean(String name, int kor, int eng, int math) {
++		this.name = name;
++		this.kor = kor;
++		this.eng = eng;
++		this.math = math;
++
++		// TODO Auto-generated constructor stub
++
++	}
++
++	public void setName(String name) {
++		this.name = name;
++
++	}
++
++	public void setKor(int kor) {
++		this.kor = kor;
++	}
++
++	public void setEng(int eng) {
++		this.eng = eng;
++
++	}
++
++	public void setMath(int math) {
++		this.math = math;
++	}
++
++	/*
++	 * public void setTotal(int total) { this.total=total; }
++	 * 
++	 * public int getTotal() { return total;
++	 * 
++	 * } public void setAve(int ave) { this.ave=ave; } public int getAve() {
++	 * return ave;
++	 * 
++	 * }
++	 */
++	public String getName() {
++		return name;
++	}
++
++	public int getKor() {
++		return kor;
++	}
++
++	public int getEng() {
++		return eng;
++
++	}
++
++	public int getMath() {
++		return math;
++	}
++
++}
+diff --git a/jee/src/grade/GradeController.java b/jee/src/grade/GradeController.java
+new file mode 100644
+index 0000000..d5ecbdc
+--- /dev/null
++++ b/jee/src/grade/GradeController.java
+@@ -0,0 +1,39 @@
++package grade;
++
++
++import javax.swing.JOptionPane;
++
++/**
++ * @date : 2016. 6. 8.
++ * @author : 최인철
++ * @file_name : Avg.java
++ * @story :
++ */
++public class GradeController {
++	/**
++	 * 클라이언트에서 프로그래 개발 요청이 왓습니다. 이름과 국,영,수,세과목 점수를 입력받아서 [홍기동 : 총정 ***점 , 평균
++	 * ***점, 합격 :()] 을 출력하는 프로그램을 만들어 주세요. 단) 평균은 소수점이하는 절삭합니다. 평균점수가 60점 미만이면
++	 * 불합격 , 이상이면 합격입니다. 90점 이상이면 A 80점 이상이면 B 70점 이상이면 C 60점 이상이면 D 50점 이상이면 E
++	 * 50점 이하이면 F 학점입니다
++	 */
++
++	public static void main(String[] args) {
++		GradeService service = new GradeServiceImpl();
++		while (true) {
++			switch (JOptionPane.showInputDialog("1.입력 2.조회 0.종료")) {
++			case "1":
++				String insert = JOptionPane.showInputDialog("이름 , 국어 , 영어, 수학");
++				String[] insert1 = insert.split(",");
++				service.regStudent(insert1[0], Integer.parseInt(insert1[1]), Integer.parseInt(insert1[2]),
++						Integer.parseInt(insert1[3]));
++				break;
++			case "2":
++				JOptionPane.showMessageDialog(null, service.result());
++				break;
++			case "0" :
++				return;
++			}
++		}
++	}
++
++}
+diff --git a/jee/src/grade/GradeService.java b/jee/src/grade/GradeService.java
+new file mode 100644
+index 0000000..1a30428
+--- /dev/null
++++ b/jee/src/grade/GradeService.java
+@@ -0,0 +1,14 @@
++package grade;
++
++public interface GradeService {
++	public void regStudent(String name ,int kor,int eng,int math) ;
++	public int outsum();
++	public int ave();
++	public String  grade();
++	public String result();
++		
++	
++		
++	
++
++}
+diff --git a/jee/src/grade/GradeServiceImpl.java b/jee/src/grade/GradeServiceImpl.java
+new file mode 100644
+index 0000000..a4ca9bd
+--- /dev/null
++++ b/jee/src/grade/GradeServiceImpl.java
+@@ -0,0 +1,61 @@
++package grade;
++
++public class GradeServiceImpl implements GradeService {
++	GradeBean gra ;
++	@Override
++	public void regStudent(String name, int kor, int eng, int math) {
++		// TODO Auto-generated method stub
++		gra =new GradeBean(name,kor,eng,math) ;
++		if (kor > 100 || eng >100 ||math>100 || kor <0||eng<0||math<0) {
++			System.out.println("점수가 100점이 넘어습니다 아니면 0 보다 작은 수입니다. 다시 입력하시요");
++
++		}	
++	}
++	@Override
++	public int outsum() {
++		// TODO Auto-generated method stub
++		return gra.getKor()+gra.getEng()+gra.getMath();
++	}
++
++	@Override
++	public int ave() {
++		// TODO Auto-generated method stub
++		return outsum()/3;
++	}
++	@Override
++	public String grade() {
++		// TODO Auto-generated method stub
++		String grade ="";
++		switch (ave()/10) {
++		case 10:
++		case 9:
++			grade = "A";
++			break;
++		case 8:
++			grade = "B";
++			break;
++		case 7:
++			grade = "C";
++			break;
++		case 6:
++			grade = "D";
++			break;
++		case 5:
++			grade = "e";
++			break;
++
++		default:
++			grade = "f";
++			break;
++			
++		}		
++		
++		return grade;
++	}
++	@Override
++	public String result() {
++		// TODO Auto-generated method stub
++		return "이름 "+gra.getName()+"\n총점 "+outsum()+" \n 평균 "+ave()+" \n등급"+grade();
++	}
++
++}
+diff --git a/jee/src/member/Gender.java b/jee/src/member/Gender.java
+new file mode 100644
+index 0000000..6f5f909
+--- /dev/null
++++ b/jee/src/member/Gender.java
+@@ -0,0 +1,48 @@
++/**
++ * 
++ */
++package member;
++
++import java.util.Scanner;
++
++/**
++ * @date : 2016. 6. 10.
++ * @author : 최인철
++ * @file_name : Gender.java
++ * @story :
++ */
++public class Gender {
++	public static void main(String[] args) {
++		/**
++		 * 개발자님 저희 사이트는 주민번호 앞자리와 성별 판별번호만 입력합니다 예를 들어 800101-1 까지만 입력하면 소비자가
++		 * 자신이 남자인지 여자인지 밝히지 않아도 자동으로 Db에 저장되는 시스템을 개발해 주세요 출력문은 홍길동 (남),아이유(여)
++		 * 
++		 * 
++		 */
++
++		/*
++		 * 1,2 : 국내 1900년대생 남,녀 3,4 : 국내 2000년대생 남,녀 5,6 : 외국 1900년대생 남,녀 7,8 :
++		 * 외국 2000년대생 남,녀
++		 */
++		Scanner scanner = new Scanner(System.in);
++		String name = "", idNo = "", gender = "여자";
++		// ------op ------
++		System.out.println("이름을 입력 하세요 :");
++		name = scanner.next();
++		System.out.println("주민번호를 다음 형식으로 입력하세요 000000-0 :");
++		idNo = scanner.next();
++		// 연산부
++		char c = idNo.charAt(7);
++		if (c == '0' || c == '9' || c>58 || c<48) {
++			System.out.println("잘못 입력 하셨습니다.");
++			return;
++		}
++		// -- up casting c가 char에서 정수로 치환
++		// 실제 문자 1은 49번 이다
++		if (c % 2 == 1) {
++			gender = "남";
++		}
++		System.out.println(name + " ( " + gender + ")");
++	}
++
++}
+diff --git a/jee/src/member/MemberBean.java b/jee/src/member/MemberBean.java
+new file mode 100644
+index 0000000..3e477c5
+--- /dev/null
++++ b/jee/src/member/MemberBean.java
+@@ -0,0 +1,127 @@
++/**
++ * 
++ */
++package member;
++
++import java.text.SimpleDateFormat;
++
++import javax.swing.JOptionPane;
++
++/**
++ * @date : 2016. 6. 16.
++ * @author : 최인철
++ * @file_name : Student.java
++ * @story :
++ */
++public class MemberBean {
++	private String ssn;
++	private String name;
++	private String id;
++	private String pw;
++	private String gender;
++	private int age;
++	private String reg;
++/**
++ * 
++ */
++public MemberBean() {
++
++}
++
++	public MemberBean(String id, String pw, String name, String ssn) {
++		this.name = name;
++		this.pw = pw;
++		this.id = id;
++		this.ssn = ssn;
++		String now = new SimpleDateFormat("yyyy-MM-dd").format(System.currentTimeMillis());
++		this.reg = now;
++		String[] arr0 = now.split("-");
++		int d = Integer.parseInt(arr0[0]);
++		String[] arr = ssn.split("-");
++		int c = Integer.parseInt(arr[1]);
++		int dage = Integer.parseInt(arr[0]);
++		if (c == 0 || c == 9) {
++			JOptionPane.showMessageDialog(null, "주민등록 번호 뒤자리에 0,9는 안됩니다. 다시 입력하세요");
++			return;
++		}
++		switch ((dage / 100000) % 2) {
++		case 0:
++			age = d - (dage / 10000 + 2000);
++			break;
++
++		default:
++			age = d - (dage / 10000 + 1900);
++			break;
++		}
++		switch (c % 2) {
++		case 0:
++			this.gender = "여";
++			break;
++
++		default:
++			this.gender = "남";
++			break;
++		}
++	}
++	public void setPw(String pw) {
++		this.pw = pw;
++	}
++
++	public void setId(String id) {
++		this.id = id;
++	}
++	public void setName(String name) {
++		this.name = name;
++	}
++	public void setAge(int age) {
++		this.age = age;
++	}
++
++	public String getSsn() {
++		return this.ssn;
++
++	}
++
++	public String getName() {
++		return this.name;
++
++	}
++
++	public String getId() {
++		return this.id;
++	}
++
++	public String getPw() {
++		return this.pw;
++
++	}
++
++	public int getAge() {
++		return this.age;
++	}
++
++	public String getGender() {
++		return this.gender;
++	}
++
++	public String getReg() {
++		return this.reg;
++
++	}
++
++	/*
++	 * (non-Javadoc)
++	 * 
++	 * @see java.lang.Object#toString()
++	 */
++	@Override
++	public String toString() {
++		return "학생" + name + ", "
++				+ "id=" + id + ", "
++				+ "비번" + "******" + ", "
++				+ "성별=" + gender + ", "
++				+ "나이=" + age + ","
++				+ " 등록일자" + reg + "]";
++	}
++
++}
+\ No newline at end of file
+diff --git a/jee/src/member/MemberMain.java b/jee/src/member/MemberMain.java
+new file mode 100644
+index 0000000..d4dd21f
+--- /dev/null
++++ b/jee/src/member/MemberMain.java
+@@ -0,0 +1,26 @@
++package member;
++
++/**
++ *@date    :2016. 6. 30.
++ *@author  :최인철
++ *@file    : MemberMain.java
++ *@story  :
++ */
++public class MemberMain {
++	public static void main(String[] args) {
++		MemberBean m = new MemberBean(); //생성자를 이용한 인스턴스 생성
++		MemberBean m2 = new MemberBean(); //생성자를 이용한 인스턴스 생성
++		try {
++			MemberBean m4 =(MemberBean) Class.forName("member.MemberBean").newInstance();
++			m4.setId("hong");
++			m4.setName("홍길동");
++			m4.setPw("1");
++		} catch (Exception e) {
++			// TODO Auto-generated catch block
++			e.printStackTrace();
++		}
++		
++		
++		System.out.println(m.toString());
++	}
++}
+diff --git a/jee/src/member/MemberService.java b/jee/src/member/MemberService.java
+new file mode 100644
+index 0000000..2d2847c
+--- /dev/null
++++ b/jee/src/member/MemberService.java
+@@ -0,0 +1,27 @@
++/**
++ * 
++ */
++package member;
++
++import java.text.SimpleDateFormat;
++
++import javax.swing.JOptionPane;
++
++/**
++ * @date   : 2016. 6. 17.
++ * @author : 최인철
++ * @file_name : StudentService.java
++ * @story : 
++*/
++public interface MemberService {
++	//1.등록
++	public void registStudent(String name, String pw,String id,String ssn);
++	//2.보기
++	public String showStudent();
++	//3.수정
++	public void updatwStudent(String pw );
++	//4.삭제
++	public String deleteStudent();
++	
++
++}
+diff --git a/jee/src/member/MemberServiceImpl.java b/jee/src/member/MemberServiceImpl.java
+new file mode 100644
+index 0000000..5f6e3d9
+--- /dev/null
++++ b/jee/src/member/MemberServiceImpl.java
+@@ -0,0 +1,33 @@
++package member;
++
++public class MemberServiceImpl implements MemberService {
++	MemberBean student;
++	@Override
++	//1.등록
++	public void registStudent(String id, String pw, String name, String ssn) {
++		// TODO Auto-generated method stub
++		student = new MemberBean(name, pw, id, ssn);
++	}
++
++	@Override
++	//2.보기
++	public String showStudent() {
++		// TODO Auto-generated method stub
++		return student.toString();
++	}
++
++	@Override
++	//3. 수정
++	public void updatwStudent(String pw) {
++		// TODO Auto-generated method stub
++		
++	}
++
++	@Override
++	//4. 삭제
++	public String deleteStudent() {
++		// TODO Auto-generated method stub
++		student=null;
++		return " 삭제";
++	}
++}
+\ No newline at end of file
+diff --git a/jee/src/member/ShoolController.java b/jee/src/member/ShoolController.java
+new file mode 100644
+index 0000000..597bf9d
+--- /dev/null
++++ b/jee/src/member/ShoolController.java
+@@ -0,0 +1,54 @@
++/**
++ * 
++ */
++package member;
++
++import javax.swing.JOptionPane;
++
++import bank.AccountBean;
++
++/**
++ * @date   : 2016. 6. 16.
++ * @author : 최인철
++ * @file_name : ShoolController.java
++ * @story : 
++*/
++public class ShoolController {
++public static void main(String[] args) {
++	MemberService service = new MemberServiceImpl();
++
++	while (true) {
++	
++	switch (JOptionPane.showInputDialog(null,"1.등록 2 보기 3. 수정 4.삭제 0 . 종료")) {
++	
++	case "1":
++		String insert= JOptionPane.showInputDialog("이름,PW,ID,SSN");
++		String[] insert1 = insert.split(",");
++		service.registStudent(insert1[0],insert1[1],insert1[2],insert1[3]);
++		
++		break;
++
++case "2":
++		
++	JOptionPane.showMessageDialog(null,service.showStudent());
++		break;
++case "3":
++	String pw = JOptionPane.showInputDialog(null, "재 비밀번호");
++	service.updatwStudent(pw);
++		break;
++
++case "4":
++	JOptionPane.showMessageDialog(null, service.deleteStudent());
++	break;
++
++case "0":
++	JOptionPane.showConfirmDialog(null, "close?");
++	return;
++
++	default:
++		break;
++	}
++}
++}
++}	
++
+diff --git a/jee/src/sql/member.sql b/jee/src/sql/member.sql
+new file mode 100644
+index 0000000..f4a40af
+--- /dev/null
++++ b/jee/src/sql/member.sql
+@@ -0,0 +1,2 @@
++insert into TEST values('lee','1');
++select * from TEST;
+\ No newline at end of file
