@@ -14,13 +14,13 @@ import javax.swing.JOptionPane;
  * @story :
  */
 public class MemberBean {
-	private String ssn;
-	private String name;
-	private String id;
-	private String pw;
-	private String gender;
-	private int age;
-	private String reg;
+	private String ssn		;
+	private String name		;
+	private String id		;
+	private String pw		;
+	private String gender	;
+	private int    age		;
+	private String reg		;
 /**
  * 
  */
@@ -70,6 +70,13 @@ public MemberBean() {
 	public void setId(String id) {
 		this.id = id;
 	}
+	public void setSsn(String ssn) {
+		this.ssn = ssn;
+	}
+
+	public void getSsn(String ssn) {
+		this.ssn = ssn;
+	}
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -102,6 +109,10 @@ public MemberBean() {
 
 	public String getGender() {
 		return this.gender;
+	}
+	
+	public void setReg() {
+		this.reg = new SimpleDateFormat("yyyy-MM-dd").format(System.currentTimeMillis());
 	}
 
 	public String getReg() {

@@ -35,12 +35,10 @@ public class JDBCTest {
 				result = rs.getString("id");
 				list.add(result);
 			}
-		} catch (ClassNotFoundException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		
 		}
 		System.out.println(list);
 	}

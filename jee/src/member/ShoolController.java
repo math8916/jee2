@@ -14,31 +14,39 @@ import bank.AccountBean;
  * @story : 
 */
 public class ShoolController {
+
 public static void main(String[] args) {
-	MemberService service = new MemberServiceImpl();
+	MemberService service =MemberServiceImpl.getInstance();
 
 	while (true) {
 	
 	switch (JOptionPane.showInputDialog(null,"1.등록 2 보기 3. 수정 4.삭제 0 . 종료")) {
 	
 	case "1":
-		String insert= JOptionPane.showInputDialog("이름,PW,ID,SSN");
+		MemberBean stu = new MemberBean();
+		String insert= JOptionPane.showInputDialog("ID,PW,이름,SSN");
 		String[] insert1 = insert.split(",");
-		service.registStudent(insert1[0],insert1[1],insert1[2],insert1[3]);
-		
+		stu.setId(insert1[0]);
+		stu.setPw(insert1[1]);
+		stu.setName(insert1[2]);
+		stu.setSsn(insert1[3]);
+		stu.setReg();
+		String result = service.regist(stu);
+JOptionPane.showMessageDialog(null, result);
+
 		break;
 
 case "2":
 		
-	JOptionPane.showMessageDialog(null,service.showStudent());
+	JOptionPane.showMessageDialog(null,service.show());
 		break;
 case "3":
 	String pw = JOptionPane.showInputDialog(null, "재 비밀번호");
-	service.updatwStudent(pw);
+	service.updatw(pw);
 		break;
 
 case "4":
-	JOptionPane.showMessageDialog(null, service.deleteStudent());
+	//JOptionPane.showMessageDialog(null, service.delete());
 	break;
 
 case "0":

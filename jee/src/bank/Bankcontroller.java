@@ -17,7 +17,7 @@ public class Bankcontroller {
 		AccountService service = new AccountServiceImpl();
 		AccountBean bean = new AccountBean();
 		BankService bankService = new BankServiceImpl();
-
+		
 		while (true) {
 
 			switch (JOptionPane.showInputDialog(null, "1.개설 2.입금 3.조회 4.출금 5.통장내역 6.해지 \n"

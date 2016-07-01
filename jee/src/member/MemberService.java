@@ -15,13 +15,13 @@ import javax.swing.JOptionPane;
 */
 public interface MemberService {
 	//1.등록
-	public void registStudent(String name, String pw,String id,String ssn);
+	public String regist(MemberBean mem);
 	//2.보기
-	public String showStudent();
+	public String show();
 	//3.수정
-	public void updatwStudent(String pw );
+	public void updatw(String pw );
 	//4.삭제
-	public String deleteStudent();
+	public void delete();
 	
 
 }
