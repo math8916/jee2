@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import global.Constants;
 
@@ -19,7 +21,7 @@ public class MemberDAO {
 	Connection con = null;
 	Statement stmt = null;
 	PreparedStatement pstmt = null;
-	ResultSet set = null;
+	ResultSet rs = null; //executeQuery()에서만 사용하는 객체
 	/**
 	 * 
 	 */
@@ -38,8 +40,7 @@ public class MemberDAO {
 
 	public int update(MemberBean mem) {
 
-		String sql = "update member set pw='" + mem.getPw() + ""
-				+ "' where id='" + mem.getId() + "' ";
+		String sql = "update member set pw='" + mem.getPw() + "" + "' where id='" + mem.getId() + "' ";
 		return exeUpDate(sql);
 	}
 
@@ -48,6 +49,7 @@ public class MemberDAO {
 		String sql = "delete from member where id='" + mem.getId() + "' ";
 		return exeUpDate(sql);
 	}
+
 	public static MemberDAO getInstans() {
 		return instans;
 	}
@@ -75,7 +77,100 @@ public class MemberDAO {
 		return updateResult;
 	}
 
-	public void exeQuery(String sql) {
+	// list
 
+	public List<MemberBean> list() {
+		String sql="slect * from member";
+		List<MemberBean> list = new ArrayList<MemberBean>();
+		try {
+			Class.forName(Constants.ORACLE_DRIVER);
+			con = DriverManager.getConnection(
+					Constants.ORACLE_URL, 
+					Constants.ORACLE_ID, 
+					Constants.ORACLE_PW);
+			stmt = con.createStatement();
+			rs=stmt.executeQuery(sql);
+			while(rs.next()){
+				MemberBean t= new MemberBean(rs.getString("ID"),rs.getString("PW"),rs.getString("NAME"),rs.getString("SSN")
+						);
+				t.setReg(rs.getString("REG"));
+				list.add(t);
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	// findByPK
+	public MemberBean findByID(String pk) {
+		String sql ="slecet * from member where id = '"+pk+"'" ;
+		MemberBean temp = null;
+		try {
+			Class.forName(Constants.ORACLE_DRIVER);
+			con = DriverManager.getConnection(
+					Constants.ORACLE_URL,
+					Constants.ORACLE_ID,
+					Constants.ORACLE_PW);
+			stmt = con.createStatement();
+			rs= stmt.executeQuery(sql);
+			if(rs.next()){
+				temp= new MemberBean(rs.getString("ID"),rs.getString("PW"),rs.getString("NAME"),rs.getString("SSN"));
+				rs.getString("REG");
+			}
+				;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return temp;
+	}
+
+	// findByNotPK
+	public List<MemberBean> findByName(String name) {
+		String sql = "select * from member where name ='"+name+"' ";
+		List<MemberBean> list = new ArrayList<MemberBean>();
+		try {
+			Class.forName(Constants.ORACLE_DRIVER);
+			con = DriverManager.getConnection(
+					Constants.ORACLE_URL, 
+					Constants.ORACLE_ID, 
+					Constants.ORACLE_PW);
+			stmt = con.createStatement();
+			rs=stmt.executeQuery(sql);
+			while(rs.next()){
+				MemberBean t= new MemberBean(rs.getString("ID"),rs.getString("PW"),rs.getString("NAME"),rs.getString("SSN")
+						);
+				t.setReg(rs.getString("REG"));
+				list.add(t);
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	// count
+	public int count() {
+		String sql="select count(*) as count from member";
+		int count=0;
+		try {
+			Class.forName(Constants.ORACLE_DRIVER);
+			con = DriverManager.getConnection(
+					Constants.ORACLE_URL, 
+					Constants.ORACLE_ID, 
+					Constants.ORACLE_PW);
+			stmt = con.createStatement();
+			rs = stmt.executeQuery(sql);
+			while (rs.next()) {
+				count=rs.getInt("count");
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return count;
 	}
 }

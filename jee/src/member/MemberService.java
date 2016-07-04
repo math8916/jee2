@@ -4,6 +4,7 @@
 package member;
 
 import java.text.SimpleDateFormat;
+import java.util.List;
 
 import javax.swing.JOptionPane;
 
@@ -23,6 +24,21 @@ public interface MemberService {
 	//4.삭제
 
 	public String delete(MemberBean mem);
+	/**
+	 * @return
+	 */
+	public int count();
+	/**
+	 * @param findID
+	 * @return
+	 */
+	public MemberBean findByID(String findID);
+	
+	public List<MemberBean> findByName(String findName);
+	/**
+	 * @return
+	 */
+	public List<MemberBean> list();
 	
 
 }

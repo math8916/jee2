@@ -1,6 +1,7 @@
 package grade;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -11,17 +12,26 @@ import java.sql.Statement;
  *@story  :
  */
 public class GradeDAO {
-	public static void main(String[] args) {
 		Connection con =null;
 		Statement stmt=null;
+		PreparedStatement psmt=null;
 		ResultSet set =null;
-		int UpdateResult =0;
-		String sqlCreate = "create table grade("
-				+ "name varchar2(20),"
-				+ "kor varchar2(20),"
-				+ "eng varchar2(20),"
-				+ "math varchar2(20)"
-				+ ")";
-		String sqlDrop="drop table grade";
-	}
+/**
+ * 
+ */	
+ private static GradeDAO instans = new GradeDAO();
+		
+private GradeDAO() {
+	// TODO Auto-generated constructor stub
 }
+
+public static GradeDAO getInstans() {
+	return instans;
+}
+
+
+
+	
+		
+}
+

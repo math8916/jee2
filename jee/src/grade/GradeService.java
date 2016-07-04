@@ -1,12 +1,18 @@
 package grade;
 
+import java.util.List;
+
 public interface GradeService {
-	public void regStudent(String name ,int kor,int eng,int math) ;
-	public int outsum();
-	public int ave();
-	public String  grade();
-	public String result();
-		
+	public int insert (GradeBean grade);
+	public int update (GradeBean grade);
+	public int delete (GradeBean grade);
+	
+	public List<GradeBean> list();
+	public List<GradeBean> findByHakjum();
+	public GradeBean findBySeq(int seq);
+	public int count();
+	
+	
 	
 		
 	

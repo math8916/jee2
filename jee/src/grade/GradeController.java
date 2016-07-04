@@ -18,18 +18,24 @@ public class GradeController {
 	 */
 
 	public static void main(String[] args) {
-		GradeService service = new GradeServiceImpl();
+		
+		GradeService service = GradeServiceImpl.getInstane();
 		while (true) {
-			switch (JOptionPane.showInputDialog("1.입력 2.조회 0.종료")) {
+			switch (JOptionPane.showInputDialog("1.추가 2.수정 3.삭제4,전체조회 5.학점조회 6,시퀸스조회 7응시생수 0.종료")) {
 			case "1":
-				String insert = JOptionPane.showInputDialog("이름 , 국어 , 영어, 수학");
+/*				String insert = JOptionPane.showInputDialog("이름 , 국어 , 영어, 수학");
 				String[] insert1 = insert.split(",");
 				service.regStudent(insert1[0], Integer.parseInt(insert1[1]), Integer.parseInt(insert1[2]),
 						Integer.parseInt(insert1[3]));
-				break;
+*/				break;
 			case "2":
-				JOptionPane.showMessageDialog(null, service.result());
+//				JOptionPane.showMessageDialog(null, service.result());
 				break;
+			case"3": break;
+			case"4": break;
+			case"5": break;
+			case"6": break;
+			case"7": break;
 			case "0" :
 				return;
 			}

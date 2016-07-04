@@ -114,7 +114,9 @@ public MemberBean() {
 	public void setReg() {
 		this.reg = new SimpleDateFormat("yyyy-MM-dd").format(System.currentTimeMillis());
 	}
-
+	public void setReg(String s) {
+		
+	}
 	public String getReg() {
 		return this.reg;
 
@@ -132,7 +134,7 @@ public MemberBean() {
 				+ "비번" + "******" + ", "
 				+ "성별=" + gender + ", "
 				+ "나이=" + age + ","
-				+ " 등록일자" + reg + "]";
+				+ " 등록일자" + reg + "]\n";
 	}
 
 }

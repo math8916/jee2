@@ -1,5 +1,7 @@
 package member;
 
+import java.util.List;
+
 public class MemberServiceImpl implements MemberService {
 
 	MemberDAO dao = MemberDAO.getInstans();
@@ -62,6 +64,31 @@ public class MemberServiceImpl implements MemberService {
 		}
 		return msg;
 	}
+		@Override
+	public int count() {
+		// TODO Auto-generated method stub
+		return dao.count();
+	}
+
+		@Override
+		public MemberBean findByID(String findID) {
+			// TODO Auto-generated method stub
+			
+			
+			return dao.findByID(findID);
+		}
+
+		@Override
+		public List<MemberBean> list() {
+			
+			return dao.list();
+		}
+
+		@Override
+		public List<MemberBean> findByName(String findName) {
+			// TODO Auto-generated method stub
+			return dao.findByName(findName);
+		}
 }
 
 /*
