@@ -2,6 +2,7 @@ package member;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -17,6 +18,7 @@ import global.Constants;
 public class MemberDAO {
 	Connection con = null;
 	Statement stmt = null;
+	PreparedStatement pstmt = null;
 	ResultSet set = null;
 	/**
 	 * 
@@ -28,6 +30,24 @@ public class MemberDAO {
 
 	}
 
+	public int insert(MemberBean mem) {
+		String sql = "insert into member(id,pw,name,reg,ssn)" + "values('" + mem.getId() + "','" + mem.getPw() + "','"
+				+ mem.getName() + "','" + mem.getReg() + "','" + mem.getSsn() + "')";
+		return exeUpDate(sql);
+	}
+
+	public int update(MemberBean mem) {
+
+		String sql = "update member set pw='" + mem.getPw() + ""
+				+ "' where id='" + mem.getId() + "' ";
+		return exeUpDate(sql);
+	}
+
+	public int delete(MemberBean mem) {
+
+		String sql = "delete from member where id='" + mem.getId() + "' ";
+		return exeUpDate(sql);
+	}
 	public static MemberDAO getInstans() {
 		return instans;
 	}
@@ -52,7 +72,7 @@ public class MemberDAO {
 		} else {
 			System.out.println("성공");
 		}
-			return updateResult;
+		return updateResult;
 	}
 
 	public void exeQuery(String sql) {

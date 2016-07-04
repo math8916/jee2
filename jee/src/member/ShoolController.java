@@ -20,7 +20,7 @@ public static void main(String[] args) {
 
 	while (true) {
 	
-	switch (JOptionPane.showInputDialog(null,"1.등록 2 보기 3. 수정 4.삭제 0 . 종료")) {
+	switch (JOptionPane.showInputDialog(null,"1.등록 2 보기 3. 수정(비번) 4.삭제 0 . 종료")) {
 	
 	case "1":
 		MemberBean stu = new MemberBean();
@@ -41,11 +41,21 @@ case "2":
 	JOptionPane.showMessageDialog(null,service.show());
 		break;
 case "3":
-	String pw = JOptionPane.showInputDialog(null, "재 비밀번호");
-	service.updatw(pw);
+	MemberBean stu1 = new MemberBean();
+	String input2 = JOptionPane.showInputDialog(null, "변경 아이디 입력, 재 비밀번호");
+	String[] inputArr1 = input2.split(",");
+	stu1.setId(inputArr1[0]);
+	stu1.setPw(inputArr1[1]);
+	JOptionPane.showMessageDialog(null,service.updatw(stu1));
 		break;
 
 case "4":
+	MemberBean stu2 = new MemberBean();
+	String input3 = JOptionPane.showInputDialog(null, "삭제 아이디 입력");
+	
+	
+	stu2.setId(input3);
+	JOptionPane.showMessageDialog(null, service.delete(stu2));
 	//JOptionPane.showMessageDialog(null, service.delete());
 	break;
 

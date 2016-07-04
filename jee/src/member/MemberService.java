@@ -19,9 +19,10 @@ public interface MemberService {
 	//2.보기
 	public String show();
 	//3.수정
-	public void updatw(String pw );
+	public String updatw(MemberBean mem );
 	//4.삭제
-	public void delete();
+
+	public String delete(MemberBean mem);
 	
 
 }

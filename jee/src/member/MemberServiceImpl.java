@@ -18,9 +18,7 @@ public class MemberServiceImpl implements MemberService {
 	public String regist(MemberBean mem) {
 		// TODO Auto-generated method stub
 		String msg="";
-		String sql = "insert into member(id,pw,name,reg,ssn)"
-				+ "values('"+mem.getId()+"','"+mem.getPw()+"','"+mem.getName()+"','"+mem.getReg()+"','"+mem.getSsn()+"')";
-		int result = dao.exeUpDate(sql);
+		int result = dao.insert(mem);
 		if (result ==1) {
 			msg="가입 성공";
 		}else{
@@ -38,15 +36,31 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	// 3. 수정
-	public void updatw(String pw) {
+	public String updatw(MemberBean mem) {
+		String msg="";
+		
+		if (dao.update(mem) ==1) {
+			msg="변경 성공";
+		}else{
+			msg="변경 실패";
+		}
+		return msg;
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	// 4. 삭제
-	public void delete() {
+	public String delete(MemberBean mem) {
 		// TODO Auto-generated method stub
+		String msg="";
+		
+		if (dao.delete(mem) ==1) {
+			msg="변경 성공";
+		}else{
+			msg="변경 실패";
+		}
+		return msg;
 	}
 }
 
