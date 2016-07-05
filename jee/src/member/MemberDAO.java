@@ -58,11 +58,10 @@ public class MemberDAO {
 
 		int updateResult = 0;
 
-		String sqlDrop = "drop table member";
-		String sqlInsert = "";
+		
 		try {
 			Class.forName(Constants.ORACLE_DRIVER);
-			con = DriverManager.getConnection(Constants.ORACLE_URL, Constants.ORACLE_ID, Constants.ORACLE_PW);
+			con = DriverManager.getConnection(Constants.ORACLE_URL, Constants.USER_ID, Constants.USER_PW);
 			stmt = con.createStatement();
 			updateResult = stmt.executeUpdate(sql);
 		} catch (Exception e) {
@@ -86,8 +85,8 @@ public class MemberDAO {
 			Class.forName(Constants.ORACLE_DRIVER);
 			con = DriverManager.getConnection(
 					Constants.ORACLE_URL, 
-					Constants.ORACLE_ID, 
-					Constants.ORACLE_PW);
+					Constants.USER_ID, 
+					Constants.USER_PW);
 			stmt = con.createStatement();
 			rs=stmt.executeQuery(sql);
 			while(rs.next()){
@@ -111,8 +110,8 @@ public class MemberDAO {
 			Class.forName(Constants.ORACLE_DRIVER);
 			con = DriverManager.getConnection(
 					Constants.ORACLE_URL,
-					Constants.ORACLE_ID,
-					Constants.ORACLE_PW);
+					Constants.USER_ID,
+					Constants.USER_PW);
 			stmt = con.createStatement();
 			rs= stmt.executeQuery(sql);
 			if(rs.next()){
@@ -135,8 +134,8 @@ public class MemberDAO {
 			Class.forName(Constants.ORACLE_DRIVER);
 			con = DriverManager.getConnection(
 					Constants.ORACLE_URL, 
-					Constants.ORACLE_ID, 
-					Constants.ORACLE_PW);
+					Constants.USER_ID, 
+					Constants.USER_PW);
 			stmt = con.createStatement();
 			rs=stmt.executeQuery(sql);
 			while(rs.next()){
@@ -160,8 +159,8 @@ public class MemberDAO {
 			Class.forName(Constants.ORACLE_DRIVER);
 			con = DriverManager.getConnection(
 					Constants.ORACLE_URL, 
-					Constants.ORACLE_ID, 
-					Constants.ORACLE_PW);
+					Constants.USER_ID, 
+					Constants.USER_PW);
 			stmt = con.createStatement();
 			rs = stmt.executeQuery(sql);
 			while (rs.next()) {

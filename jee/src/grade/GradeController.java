@@ -1,7 +1,8 @@
 package grade;
 
-
 import javax.swing.JOptionPane;
+
+import member.MemberBean;
 
 /**
  * @date : 2016. 6. 8.
@@ -18,25 +19,58 @@ public class GradeController {
 	 */
 
 	public static void main(String[] args) {
-		
+
 		GradeService service = GradeServiceImpl.getInstane();
 		while (true) {
-			switch (JOptionPane.showInputDialog("1.추가 2.수정 3.삭제4,전체조회 5.학점조회 6,시퀸스조회 7응시생수 0.종료")) {
+			switch (JOptionPane.showInputDialog("1.추가 2.수정 3.삭제4,전체조회 5.학점..조회(seq) 6,시퀸스조회(Id) 7응시생수 0.종료")) {
+
 			case "1":
-/*				String insert = JOptionPane.showInputDialog("이름 , 국어 , 영어, 수학");
+				GradeBean gdb = new GradeBean();
+				String insert = JOptionPane
+						.showInputDialog("점수및 아이디 시험일자을 입력하시오 " + "jave,sql,html,javascript,id,exam_date");
 				String[] insert1 = insert.split(",");
-				service.regStudent(insert1[0], Integer.parseInt(insert1[1]), Integer.parseInt(insert1[2]),
-						Integer.parseInt(insert1[3]));
-*/				break;
-			case "2":
-//				JOptionPane.showMessageDialog(null, service.result());
+				gdb.setJava(Integer.parseInt(insert1[0]));
+				gdb.setSql(Integer.parseInt(insert1[1]));
+				gdb.setHtml(Integer.parseInt(insert1[2]));
+				gdb.setJavascript(Integer.parseInt(insert1[3]));
+				gdb.setId(insert1[4]);
+				gdb.setExam_date(insert1[5]);
+				String result = service.regist(gdb);
+
+				// service.regStudent(insert1[0], Integer.parseInt(insert1[1]),
+				// Integer.parseInt(insert1[2]),
+				// Integer.parseInt(insert1[3]));
 				break;
-			case"3": break;
-			case"4": break;
-			case"5": break;
-			case"6": break;
-			case"7": break;
-			case "0" :
+			case "2":
+				GradeBean gdb1 = new GradeBean();
+				String insert2 = JOptionPane.showInputDialog(null, "점수를 수정할 Seq및 과목 및 점수를 입력하세요");
+				String[] insert3 = insert2.split(",");
+				gdb1.setSeq(insert3[0]);
+				gdb1.setUpdateclass(insert3[1]);
+				gdb1.setUpdateclassnum(Integer.parseInt(insert3[2]));
+				JOptionPane.showMessageDialog(null, service.update(gdb1));
+				break;
+			case "3":
+				GradeBean adb3 = new GradeBean();
+				String input3 = JOptionPane.showInputDialog(null, "삭제할 Seq 입력하세요");
+				adb3.setSeq(input3);
+
+				JOptionPane.showMessageDialog(null, service.delete(adb3));
+				break;
+			case "4": // 전체 리스트
+				JOptionPane.showMessageDialog(null, service.list());
+				break;
+			case "5":
+				String input4= JOptionPane.showInputDialog("조회할 Seq 입력하세요");
+				JOptionPane.showMessageDialog(null, service.findBySeq(Integer.parseInt(input4)));
+				break;
+			case "6":
+				JOptionPane.showMessageDialog(null, "조회할 ID 입력하세요");
+				break;
+			case "7": // 응시생 수
+				JOptionPane.showMessageDialog(null, "조회할 시험일자 입력하세요");
+				break;
+			case "0":
 				return;
 			}
 		}
