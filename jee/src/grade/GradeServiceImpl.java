@@ -22,12 +22,15 @@ public class GradeServiceImpl implements GradeService {
 	@Override
 	public String insert(GradeBean grade) {
 		String insert = "";
-		int sum =grade.getJava()+grade.getSql()+grade.getHtml()+grade.getJavascript();
-		int ave =sum/4;
-		String gradeRank ="";
-		gradeRank = gradeRank(ave);
-		grade.setGrade(gradeRank);
-		// TODO Auto-generated method stub
+		grade.setGrade(this.gradeRank(grade));
+		if(dao.insert(grade)==1){
+			insert ="성공";
+			System.out.println(grade.toString());
+		}else{
+			insert ="실패";
+		}
+			
+		
 		return insert;
 	}
 
@@ -35,8 +38,11 @@ public class GradeServiceImpl implements GradeService {
 	 * @param ave
 	 * @return
 	 */
-	public String gradeRank(int ave) {
-		String gradeRank;
+	public String gradeRank(GradeBean grade) {
+		
+		String gradeRank="";
+		int sum =grade.getJava()+grade.getSql()+grade.getHtml()+grade.getJavascript();
+		int ave =sum/4;
 		switch (ave/10) {
 		case 10:
 		case 9:
@@ -76,10 +82,10 @@ public class GradeServiceImpl implements GradeService {
 	}
 
 	@Override
-	public String delete(GradeBean grade) {
+	public String delete(String grade) {
 		String msg="";
 		
-		if (dao.delete(grade) ==1) {
+		if (dao.delete(grade) == 1) {
 			msg="변경 성공";
 		}else{
 			msg="변경 실패";
@@ -89,8 +95,9 @@ public class GradeServiceImpl implements GradeService {
 
 	@Override
 	public List<GradeBean> list() {
+		List<GradeBean> list =dao.list();
 		// TODO Auto-generated method stub
-		return dao.list();
+		return list;
 	}
 
 	@Override
@@ -101,7 +108,7 @@ public class GradeServiceImpl implements GradeService {
 
 	@Override
 	public GradeBean findBySeq(int seq) {
-		// TODO Auto-generated method stub
+		
 		return dao.findBySeq(seq);
 	}
 
@@ -117,6 +124,13 @@ public class GradeServiceImpl implements GradeService {
 		int result = dao.insert(gdb);
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public List<GradeBean> findById(String sid) {
+		
+		// TODO Auto-generated method stub
+		return dao.findById(sid);
 	}
 	
 }

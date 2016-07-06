@@ -40,3 +40,46 @@ where seq = 1001;
 
 --delete
 delete from grade where seq ='1001';
+
+----------------------------------------
+
+create view grade_view 
+as select * from grade;
+
+drop view grade_view;
+
+-- join
+create view grade_member as
+select 
+g.seq as seq,
+g.grade as GRADE,
+g.jave as java,
+g.sql as sql,
+g.html as html,
+g.javascript as js,
+g.exam_date as exam_date,
+m.id as id,
+m.pw as pw,
+m.name as name,
+m.reg as reg,
+m.ssn as ssn
+from member m,grade g 
+where m.id=g.id;
+
+
+create view grade_member as
+select 
+grade,
+jave as java,
+sql as sql,
+html as html,
+javascript as js,
+exam_date as exam_date,
+id as id,
+pw as pw,
+name as name,
+reg as reg,
+ssn as ssn
+from member m,grade g 
+where m.id=g.id;
+select * from GRADE_member;

@@ -75,7 +75,7 @@ public class GradeBean {
 	@Override
 	public String toString() {
 		return "성적표 [No:" + seq + ", 이름 :" + id + ", grade=" + grade + ", java=" + java + ", sql=" + sql
-				+ ", html=" + html + ", javascript=" + javascript + "]";
+				+ ", html=" + html + ", javascript=" + javascript + "]\n";
 	}
 	/**
 	 * @param string

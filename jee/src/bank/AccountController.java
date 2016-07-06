@@ -10,25 +10,21 @@ import javax.swing.JOptionPane;
  * @file_name : Bankcontroller.java
  * @story :
  */
-public class Bankcontroller {
+public class AccountController {
 	public static void main(String[] args) {
-		int ok=0;
-		String spec ="";
-		AccountService service = new AccountServiceImpl();
-		AccountBean bean = new AccountBean();
-		BankService bankService = new BankServiceImpl();
 		
+		AccountService service = AccountServiceImpl.getInstane();
 		while (true) {
 
-			switch (JOptionPane.showInputDialog(null, "1.개설 2.입금 3.조회 4.출금 5.통장내역 6.해지 \n"
-					+ "관리자 모드 11.개설 12.조회 13. 조회(계좌번호) 14.이름 조회 15.조회(전체통장) \n "
-					+ "16.비밀번호 변경 17. 삭제 0.종료:")) {
+			switch (JOptionPane.showInputDialog(null, "1.개설 2.입금 3.출금 4.수정 비밀번호 5.해지 "
+					+ "6.조회 전체 \n 7.조회 8.조회(이름) 9.(전체통장) 0.종료 \n ")){
+					
 
 			case "1":
-				spec = JOptionPane.showInputDialog("이름,ID,PW");
-			
-				String[] specArr= spec.split(",");
-				service.openAccount(specArr[0],specArr[1],specArr[2]);
+				String id = JOptionPane.showInputDialog("ID입력하시여");
+				if (id.equals(service))
+				
+				service.openAccount(id);
 				
 				break ;
 			case "2":

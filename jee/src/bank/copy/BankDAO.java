@@ -1,4 +1,4 @@
-package bank;
+package bank.copy;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

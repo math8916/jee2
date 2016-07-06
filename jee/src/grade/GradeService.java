@@ -5,7 +5,7 @@ import java.util.List;
 public interface GradeService {
 	public String insert (GradeBean grade);
 	public String update (GradeBean grade);
-	public String delete (GradeBean grade);
+	public String delete (String grade);
 	
 	public List<GradeBean> list();
 	public List<GradeBean> findByHakjum();
@@ -14,6 +14,12 @@ public interface GradeService {
 	
 	
 	public String regist(GradeBean gdb);
+	/**
+	 * @param sid
+	 * @return
+	 */
+	public List<GradeBean> findById(String sid);
+	public String gradeRank(GradeBean grade);
 	
 	
 	
