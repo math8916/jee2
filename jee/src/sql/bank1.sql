@@ -1,3 +1,17 @@
+create table account(
+accountNo number constraint account_pk primary key,
+money number,
+id varchar2(20),
+constraint account_emeber_fk foreign key(id)
+references member(id) on delete cascade
+);
+
+
+
+drop table account;
+select * from ACCOUNT;
+select * from member;
+
 create table member(
 id varchar2(20) primary key,
 pw varchar2(20),
@@ -34,3 +48,11 @@ where id='you';
 
 drop table account;
 select * from member;
+
+-----------------------------------------
+create view account_member
+as 
+select * from MEMBER m,account a
+where a.id=m.id;
+
+select * from GRADE_MEMBER;

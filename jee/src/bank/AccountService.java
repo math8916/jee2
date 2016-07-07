@@ -14,8 +14,9 @@ import java.util.List;
 public interface AccountService {
 	// 1.개설 2.입금 3.조회 4.출금 5.통장내역
 	// 1.개설
-	public abstract void openAccount(String name, String id, String pw);
+	public String openAccount(AccountBean acc);
 
+	
 	// 2.입금
 	public void deposit(int inputMoney);
 
@@ -39,6 +40,10 @@ public interface AccountService {
 
 	// READ 9. 조회(전체통장수)
 	public int count();
+
+	/**
+	 * @param id
+	 */
 
 	// public String withdraw(int output);
 	

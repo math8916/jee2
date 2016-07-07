@@ -31,7 +31,10 @@ public class AccountBean { // 클래스 ,헤더 접근제한 -클래스 종류
 	}
 
 	public void setAccountNo(int accountNo) {
-		this.accountNo = accountNo;
+		this.accountNo=(int) ((Math.random() * 999999) + 100000);
+		if(this.accountNo > 999999){
+			this.accountNo -= 100000;
+		}
 	}
 
 	public int getMoney() {

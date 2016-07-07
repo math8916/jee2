@@ -9,17 +9,40 @@ import java.util.List;
  * @story : 계좌 인터페이스
 */
 public class AccountServiceImpl implements AccountService {
-
-	@Override
-	public void openAccount(String id) {
-		// TODO Auto-generated method stub
-		
+	AccountDAO dao = AccountDAO.getInstans();
+	private static AccountServiceImpl instence = new AccountServiceImpl();
+	public static AccountServiceImpl getInstence() {
+		return instence;
 	}
-
+	private AccountServiceImpl() {}
+	
+	public String openAccount(AccountBean acc) {
+		String result = "";
+		
+		acc.setAccountNo(accountNo());
+		
+		if (dao.openAccount(acc) == 1) {
+			result = "계좌 개설에 성공하였습니다";
+		}else {
+			result = "계좌 개설에 실패하였습니다";
+		}
+		return result;		
+	}
+    public int accountNo(){
+    	int result=0;
+    	int accountNo=(int) ((Math.random() * 999999) + 100000);
+		if(accountNo > 999999){
+			accountNo -= 100000;
+			}
+     return result;
+}
 	@Override
 	public void deposit(int inputMoney) {
-		// TODO Auto-generated method stub
+		/*int money =account.getMoney();
+		money += inputMoney ;
+		account.setMoney(money);*/
 		
+		return ;
 	}
 
 	@Override
@@ -64,22 +87,12 @@ public class AccountServiceImpl implements AccountService {
 		return 0;
 	}
 
-	@Override
 	public void showAccount() {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
 	public String deleteAccount(String account) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	/**
-	 * @return
-	 */
-	public static AccountService getInstane() {
 		// TODO Auto-generated method stub
 		return null;
 	}
