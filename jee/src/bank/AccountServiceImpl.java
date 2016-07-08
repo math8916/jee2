@@ -1,6 +1,7 @@
 package bank;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @date   : 2016. 6. 20.
@@ -29,72 +30,73 @@ public class AccountServiceImpl implements AccountService {
 		return result;		
 	}
     public int accountNo(){
-    	int result=0;
     	int accountNo=(int) ((Math.random() * 999999) + 100000);
 		if(accountNo > 999999){
-			accountNo -= 100000;
-			}
-     return result;
-}
+			accountNo -= 10000;
+		}
+		return accountNo;
+    }
 	@Override
-	public void deposit(int inputMoney) {
+	public String deposit(AccountBean acc1) {
 		/*int money =account.getMoney();
 		money += inputMoney ;
 		account.setMoney(money);*/
 		
-		return ;
+		return String.valueOf(dao.deposit(acc1)) ;
 	}
 
 	@Override
-	public String withdraw(int output) {
+	public String withdraw(AccountBean acc2) {
 		// TODO Auto-generated method stub
-		return null;
+		return String.valueOf(dao.withdraw(acc2));
 	}
 
 	@Override
-	public String updateAccount(AccountBean bean) {
+	public String updateAccount(AccountBean acc3) {
 		// TODO Auto-generated method stub
-		return null;
+		return String.valueOf(dao.updateAccount(acc3));
 	}
 
 	@Override
-	public String deleteAccount() {
-		// TODO Auto-generated method stub
-		return null;
+	public String deleteAccount(String delete) {
+		
+		return String.valueOf(dao.deleteAccount(delete));
 	}
 
 	@Override
-	public List<AccountBean> list() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<?> list() {
+		List<?> list = dao.selectAll();
+		return list;
 	}
 
 	@Override
-	public AccountBean findByAccountNo(String account) {
-		// TODO Auto-generated method stub
-		return null;
+	public AccountMemberBean findByAccountNo(int account) {
+	
+		return dao.findByAccountNo(account);
 	}
 
 	@Override
-	public List<AccountBean> findByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<?> findBy(String name) {
+		
+		return dao.findByName(name);
 	}
 
 	@Override
 	public int count() {
 		// TODO Auto-generated method stub
-		return 0;
+		return dao.count();
 	}
 
 	public void showAccount() {
 		// TODO Auto-generated method stub
 		
 	}
-
-	public String deleteAccount(String account) {
+	@Override
+	public Map<?,?> map() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+
 
 }

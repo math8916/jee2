@@ -10,7 +10,7 @@ references member(id) on delete cascade
 
 drop table account;
 select * from ACCOUNT;
-select * from member;
+select * from account_member;
 
 create table member(
 id varchar2(20) primary key,
@@ -38,8 +38,7 @@ select count(*) as account from member; -- count
 ;
 
 -- UPDATE
-update member set pw='9999'
-where id='you';
+update member set pw='9999' where id='you';
 
 --Delete
 
@@ -49,10 +48,25 @@ where id='you';
 drop table account;
 select * from member;
 
------------------------------------------
+----------------외부 스키마 : 논리적-------------------------
 create view account_member
 as 
 select * from MEMBER m,account a
 where a.id=m.id;
 
+drop view account_member;
 select * from GRADE_MEMBER;
+select * from ACCOUNT;
+
+create view account_member as
+select 
+a.accountno as accountno,
+m.id as id,
+m.pw as pw,
+m.name as name,
+a.money as money,
+m.reg as reg,
+m.ssn as ssn
+from member m,account a 
+where m.id=a.id;
+select * from ACCOUNT_member;

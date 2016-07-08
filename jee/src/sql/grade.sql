@@ -49,7 +49,7 @@ as select * from grade;
 drop view grade_view;
 
 -- join
-create view grade_member as
+create view grade_member1 as
 select 
 g.seq as seq,
 g.grade as GRADE,

@@ -9,11 +9,18 @@ import global.Constants;
  * @story :
  */
 public class AccountBean { // 클래스 ,헤더 접근제한 -클래스 종류
-	private int accountNo; // 인스턴스 변수는 초기화 하지 않는다.
-	
-	private int money;
-	
+	private int accountNo,money; // 인스턴스 변수는 초기화 하지 않는다.
 	private String id;
+
+	public String getPw() {
+		return pw;
+	}
+
+	public void setPw(String pw) {
+		this.pw = pw;
+	}
+
+	private String pw;
 	
 	
 	/* (non-Javadoc)
@@ -31,10 +38,7 @@ public class AccountBean { // 클래스 ,헤더 접근제한 -클래스 종류
 	}
 
 	public void setAccountNo(int accountNo) {
-		this.accountNo=(int) ((Math.random() * 999999) + 100000);
-		if(this.accountNo > 999999){
-			this.accountNo -= 100000;
-		}
+		this.accountNo = accountNo;
 	}
 
 	public int getMoney() {

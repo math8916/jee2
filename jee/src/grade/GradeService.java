@@ -2,7 +2,9 @@ package grade;
 
 import java.util.List;
 
-public interface GradeService {
+import global.CommonService;
+
+public interface GradeService extends CommonService {
 	public String insert (GradeBean grade);
 	public String update (GradeBean grade);
 	public String delete (String grade);
