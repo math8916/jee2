@@ -20,7 +20,7 @@ public class AccountController {
 		while (true) {
 
 			switch (JOptionPane.showInputDialog(null, "1.개설 \n2.입금 \n3.출금 \n4.수정 비밀번호 \n5.해지" + " "
-					+ "\n6.조회 전체 \n 7.조회(계좌번호) \n8.조회(이름)" + " \n9.(전체통장) \n0.종료 \n ")) {
+					+ "\n6.조회 전체 \n 7.조회(계좌번호) \n8.조회(이름)" + " \n9.(전체통장) \n10.로그인 \n0.종료 \n ")) {
 
 			case "1":
 				AccountBean acc = new AccountBean();
@@ -96,6 +96,9 @@ public class AccountController {
 				break;
 			case "9":
 				JOptionPane.showMessageDialog(null, "전체 통장 수는" + service.count() + "개 입니다.");
+				break;
+			case "10":
+				
 				break;
 			case "0":
 				JOptionPane.showConfirmDialog(null, "close?");

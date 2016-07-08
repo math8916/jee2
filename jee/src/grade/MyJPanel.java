@@ -20,9 +20,9 @@ public class MyJPanel extends JPanel {
      public MyJPanel() {
           super(new GridLayout(1, 0));
 
-          List<GradeBean> list = service.list();
+          List<?> list = service.list();
           
-          JTable table = new JTable(new MyTableModel(list));
+          JTable table = new JTable(new MyTableModel((List<GradeBean>) list));
           table.setPreferredScrollableViewportSize(new Dimension(500, 70));
           table.setFillsViewportHeight(true);
           // Create the scroll pane and add the table to it.

@@ -39,7 +39,7 @@ JList<String> itemList;
 		wrapper_panel = new JPanel();
 		GradeService service = GradeServiceImpl.getInstane();
 		flow_panel = new JPanel(new FlowLayout());
-		List<GradeBean> t =service.list();
+		List<?> t =service.list();
 		System.out.println(t);
 		System.out.println("성적리스트"+t);
 		itemList = new JList(t.toArray());

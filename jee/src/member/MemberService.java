@@ -8,6 +8,7 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+
 /**
  * @date   : 2016. 6. 17.
  * @author : 최인철
@@ -40,5 +41,5 @@ public interface MemberService {
 	 */
 	public List<MemberBean> list();
 	
-
+	public String login(MemberBean member);
 }

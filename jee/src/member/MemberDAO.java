@@ -172,4 +172,15 @@ public class MemberDAO {
 		}
 		return count;
 	}
+
+	/**
+	 * @param member
+	 * @return
+	 */
+	public boolean login(MemberBean member) {
+		boolean loginok =false;
+		MemberBean m = this.findByID(member.getId());
+		m.getPw().equals(member.getPw());
+		return loginok;
+	}
 }

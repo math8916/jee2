@@ -7,7 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import global.Constants;
 import global.DatabaseFactory;
@@ -242,5 +244,35 @@ public class AccountDAO {
 			e.printStackTrace();
 		}
 		return result;
+	}
+
+	/**
+	 * @return
+	 */
+	public Map<?, ?> selectMap() {
+		Map<String,AccountMemberBean> map = new HashMap<String,AccountMemberBean>(); 
+		String sql ="select * from account_member";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while(rs.next()){
+				AccountMemberBean am = new AccountMemberBean();
+				am.setAccountNo(rs.getInt("accountno"));
+				am.setId(rs.getString("id"));
+				am.setPw(rs.getString("pw"));
+				am.setName(rs.getString("name"));
+				am.setMoney(rs.getInt("money"));
+				am.setReg(rs.getString("reg"));
+				am.setSsn(rs.getString("ssn"));
+
+				map.put(String.valueOf(am.getAccountNo()), am);
+
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 }

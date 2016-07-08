@@ -9,8 +9,8 @@ public interface GradeService extends CommonService {
 	public String update (GradeBean grade);
 	public String delete (String grade);
 	
-	public List<GradeBean> list();
-	public List<GradeBean> findByHakjum();
+//	public List<?> list();
+//	public List<?> findBy();
 	public GradeBean findBySeq(int input4);
 	public int count();
 	
@@ -20,7 +20,7 @@ public interface GradeService extends CommonService {
 	 * @param sid
 	 * @return
 	 */
-	public List<GradeBean> findById(String sid);
+//	public List<?> findBy(String sid);
 	public String gradeRank(GradeBean grade);
 	
 	

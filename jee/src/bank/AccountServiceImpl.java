@@ -1,5 +1,6 @@
 package bank;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -11,11 +12,14 @@ import java.util.Map;
 */
 public class AccountServiceImpl implements AccountService {
 	AccountDAO dao = AccountDAO.getInstans();
-	private static AccountServiceImpl instence = new AccountServiceImpl();
+	Map<?,?> map ;
+	private static AccountServiceImpl instance = new AccountServiceImpl();
 	public static AccountServiceImpl getInstence() {
-		return instence;
+		return instance;
 	}
-	private AccountServiceImpl() {}
+	private AccountServiceImpl() {
+		map= new HashMap<String, AccountMemberBean>();
+	}
 	
 	public String openAccount(AccountBean acc) {
 		String result = "";
@@ -93,8 +97,9 @@ public class AccountServiceImpl implements AccountService {
 	}
 	@Override
 	public Map<?,?> map() {
-		// TODO Auto-generated method stub
-		return null;
+	map = new HashMap<String,AccountMemberBean>();// controller 넘어가지 않는다 
+	map = dao.selectMap();// controller 넘어가지 않는다 
+		return map;
 	}
 	
 
