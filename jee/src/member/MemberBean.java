@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  * @story :
  */
 public class MemberBean {
-	private String ssn		;
+	private String ssn,profileImg		;
 	private String name		;
 	private String id		;
 	private String pw		;
@@ -120,6 +120,14 @@ public MemberBean() {
 	public String getReg() {
 		return this.reg;
 
+	}
+
+	public String getProfileImg() {
+		return profileImg;
+	}
+
+	public void setProfileImg(String profileImg) {
+		this.profileImg = profileImg;
 	}
 
 	/*
