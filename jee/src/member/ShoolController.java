@@ -38,8 +38,26 @@ public class ShoolController {
 				break;
 
 			case "2":
-
-				JOptionPane.showMessageDialog(null, service.show());
+				MemberBean stu4= new MemberBean();
+				String insert4 = JOptionPane.showInputDialog("ID,PW");
+				String[] insertArr4 = insert4.split(",");
+				stu4.setId(insertArr4[0]);
+				stu4.setPw(insertArr4[1]);
+				stu4.setReg();
+				String result4 = service.login(stu4);
+				JOptionPane.showMessageDialog(null, service.getSession());
+				break;
+			case"3":
+				String id,name,gender,reg,ssn;
+				
+				MemberBean stu5= new MemberBean();
+				id =stu5.getId();
+				name=stu5.getName();
+				gender=stu5.getGender();
+				reg=stu5.getReg();
+				ssn=stu5.getSsn();
+				String resultId = service.login(stu5);
+				JOptionPane.showMessageDialog(null,resultId+"id: "+ id + "name: "+ name );
 				break;
 			case "4":
 				MemberBean stu1 = new MemberBean();
@@ -47,7 +65,7 @@ public class ShoolController {
 				String[] inputArr1 = input2.split(",");
 				stu1.setId(inputArr1[0]);
 				stu1.setPw(inputArr1[1]);
-				JOptionPane.showMessageDialog(null, service.updatw(stu1));
+				JOptionPane.showMessageDialog(null, service.update(stu1));
 				break;
 
 			case "5":

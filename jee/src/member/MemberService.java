@@ -21,7 +21,7 @@ public interface MemberService {
 	//2.보기
 	public String show();
 	//3.수정
-	public String updatw(MemberBean mem );
+	public String update(MemberBean mem );
 	//4.삭제
 
 	public String delete(MemberBean mem);
@@ -35,4 +35,7 @@ public interface MemberService {
 	public List<MemberBean> list();
 	
 	public String login(MemberBean member);
-}
+	public MemberBean getSession();
+		
+	}
+

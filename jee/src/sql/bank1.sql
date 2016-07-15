@@ -43,8 +43,8 @@ update member set pw='9999' where id='you';
 --Delete
 
 delete from member
-where id='you';
-
+where id ='kim1';
+select * from member;
 drop table account;
 select * from member;
 

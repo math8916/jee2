@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+     <% String ctx = application.getContextPath(); %> 
+    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>회원리스트 페이지</title>
-<link rel="stylesheet" href="../css/member.css" />
+<link rel="stylesheet" href="<%=ctx %>/css/member.css" />
 <style type="text/css">
 div.box {style ="width: 500px;margin: 0 auto;text-align: center;"}
 table {
@@ -80,8 +82,8 @@ div {
 		</table>
 
 
-		<a  href="../index.jsp" ><img src="../image/home.jpg" alt="" width="30px" height="30px"  /></a>
-<a  href="member_controller.jsp" ><img src="../image/member.jpg" alt="" width="30px" height="30px"  /></a>
+		<a  href="<%=ctx %>/global/main.jsp" ><img src="<%=ctx %>/image/home.jpg" alt="" width="30px" height="30px"  /></a>
+<a  href="member_controller.jsp" ><img src="<%=ctx %>/image/member.jpg" alt="" width="30px" height="30px"  /></a>
 	</div>
 </body>
 </html>

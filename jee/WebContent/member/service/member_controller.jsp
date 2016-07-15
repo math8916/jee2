@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <% String ctx = application.getContextPath(); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +29,9 @@ h1	{background-color:black;
 	<ol>
 		<li><a href="regist.jsp">회원가입</a></li>
 		<li><a href="login.jsp">로그인</a></li>
-		<li><a href="updatw.jsp">내정보 수정(비밀번호)</a></li>
+		<li><a href="login_out.jsp">로그아웃</a></li>
+		<li><a href="detail.jsp">내정보 보기</a></li>
+		<li><a href="update.jsp">내정보 수정</a></li>
 		<li><a href="delete.jsp">탈퇴</a></li>
 		<li><a href="list.jsp">회원목록</a></li>
 		<li><a href="findByID.jsp">검색(ID)</a></li>
@@ -37,7 +40,7 @@ h1	{background-color:black;
 		<li><a href="count.jsp">회원수</a></li>
 	</ol>
 	
-	<a  href="../index.jsp" ><img src="../image/home.jpg" alt="" width="30px" height="30px"  /></a>
+	<a  href="<%=ctx %>/global/main.jsp" ><img src="<%=ctx %>/image/home.jpg" alt="" width="30px" height="30px"  /></a>
 	</div>
 	
 </body>

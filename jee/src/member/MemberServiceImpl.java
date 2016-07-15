@@ -44,10 +44,11 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	// 3. 수정
-	public String updatw(MemberBean mem) {
+	public String update(MemberBean mem) {
 		String msg = "";
 
 		if (dao.update(mem) == 1) {
+			session=dao.findByID(mem.getId());
 			msg = "변경 성공";
 		} else {
 			msg = "변경 실패";
@@ -102,16 +103,24 @@ public class MemberServiceImpl implements MemberService {
 		String result = "";
 
 		if (dao.login(member)) {
-			result = "로그인 성공";
+			
 			session = dao.findByID(member.getId());
+			result = session.getName();
 			accService.map();
 
 		} else {
-			result = "아이디 실패";
+			result = "";
 		}
 		return result;
 	}
+
+	@Override
+	public MemberBean getSession() {
+		// TODO Auto-generated method stub
+		return session;
+	}
 }
+
 
 /*
  * String sqlCreate =" create table member(" + "ssn varchar2(20) ,"

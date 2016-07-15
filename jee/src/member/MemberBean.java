@@ -14,13 +14,15 @@ import javax.swing.JOptionPane;
  * @story :
  */
 public class MemberBean {
-	private String ssn,profileImg		;
+	private String ssn	;
 	private String name		;
 	private String id		;
 	private String pw		;
 	private String gender	;
 	private int    age		;
 	private String reg		;
+	private String email	;
+	private String profileImg;
 /**
  * 
  */
@@ -36,7 +38,7 @@ public MemberBean() {
 		String now = new SimpleDateFormat("yyyy-MM-dd").format(System.currentTimeMillis());
 		this.reg = now;
 		String[] arr0 = now.split("-");
-		int d = Integer.parseInt(arr0[0]);
+		int thisyear = Integer.parseInt(arr0[0]);
 		String[] arr = ssn.split("-");
 		int c = Integer.parseInt(arr[1]);
 		int dage = Integer.parseInt(arr[0]);
@@ -46,11 +48,11 @@ public MemberBean() {
 		}
 		switch ((dage / 100000) % 2) {
 		case 0:
-			age = d - (dage / 10000 + 2000);
+			age = thisyear - (dage / 10000 + 2000);
 			break;
 
 		default:
-			age = d - (dage / 10000 + 1900);
+			age = thisyear - (dage / 10000 + 1900);
 			break;
 		}
 		switch (c % 2) {
@@ -72,6 +74,11 @@ public MemberBean() {
 	}
 	public void setSsn(String ssn) {
 		this.ssn = ssn;
+	}
+
+	
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
 	public void getSsn(String ssn) {
@@ -130,6 +137,14 @@ public MemberBean() {
 		this.profileImg = profileImg;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -140,6 +155,7 @@ public MemberBean() {
 		return "학생" + name + ", "
 				+ "id=" + id + ", "
 				+ "비번" + "******" + ", "
+				+ "email" + email + ", "
 				+ "성별=" + gender + ", "
 				+ "나이=" + age + ","
 				+ " 등록일자" + reg + "]\n";
