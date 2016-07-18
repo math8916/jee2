@@ -19,9 +19,9 @@ import global.Constants;
  * @story :
  */
 public class MemberDAO {
-	Connection con = null;
-	Statement stmt = null;
-	PreparedStatement pstmt = null;
+	Connection con ;
+	Statement stmt;
+	PreparedStatement pstmt ;
 	ResultSet rs = null; //executeQuery()에서만 사용하는 객체
 	/**
 	 * 
@@ -49,14 +49,46 @@ public class MemberDAO {
 
 	public int update(MemberBean mem) {
 
-		String sql = "update member set pw='" + mem.getPw() + "" + "' where id='" + mem.getId() + "' ";
-		return exeUpDate(sql);
+		String sql = "update member"
+				+ " set pw=? , email=?"
+				+ " where id=? ";
+		int result=0;
+		try {
+			pstmt= con.prepareStatement(sql);
+			pstmt.setString(1, mem.getPw());
+			pstmt.setString(2, mem.getEmail());
+			pstmt.setString(3, mem.getId());
+			result= pstmt.executeUpdate();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if (result == 0) {
+			System.out.println("실패");
+		} else {
+			System.out.println("성공");
+		}
+	return result;
 	}
 
 	public int delete(MemberBean mem) {
 
-		String sql = "delete from member where id='" + mem.getId() + "' ";
-		return exeUpDate(sql);
+		String sql = "delete from member where id=?" ;
+		int result=0;
+		try {
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, mem.getId());
+			result= pstmt.executeUpdate();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if (result == 0) {
+			System.out.println("실패");
+		} else {
+			System.out.println("성공");
+		}
+	return result;
 	}
 
 	public static MemberDAO getInstans() {

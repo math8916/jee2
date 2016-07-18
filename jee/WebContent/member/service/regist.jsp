@@ -1,14 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <% String ctx = application.getContextPath(); %> 
-    
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8" />
-	<title>회원가입</title>
-	<link rel="stylesheet" href="<%=ctx %>/css/member.css" />
-	<style>
+<style>
 h1   {color: blue;}
 h5   {border: 1px solid gray;width:500px;margin: 0 auto;} 
 p    {color: red;}
@@ -16,8 +9,9 @@ span.meta{width: 200px;background-color:yellow;float: left}
 div.box {border: 1px solid black;width:500px;margin: 0 auto;}
 input {size:10;margin: 10 left;}
 </style>
-</head>
-<body>
+<jsp:include page="../../global/top.jsp"/>
+<jsp:include page="../../global/header.jsp"/>
+
 <div class="box">
 	<form action="<%=ctx %>/member/result/regist_result.jsp" method="post">
 	<span class="meta">이     름:</span><input type="text" name="name"/><br/>
@@ -49,6 +43,6 @@ input {size:10;margin: 10 left;}
 	
 	
 	</div>
-	<jsp:include page="/global/footer.jsp"/>
-</body>
-</html>
+<jsp:include page="../../global/footer.jsp"/>
+<jsp:include page="../../global/end.jsp"/>
+    

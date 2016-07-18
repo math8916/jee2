@@ -1,29 +1,36 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-     <% String ctx = application.getContextPath(); %> 
-    
+	pageEncoding="UTF-8"%>
+<%
+	String ctx = application.getContextPath();
+%>
+<%@ page import="member.MemberBean"%>
+<%@ page import="member.MemberService"%>
+<%@ page import="member.MemberServiceImpl"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원로그인 페이지</title>
-<link rel="stylesheet" href="<%=ctx %>/css/member.css" />
+<title>회원아웃 페이지</title>
+<link rel="stylesheet" href="<%=ctx%>/css/member.css" />
 </head>
 <body>
-<div class="box">
-	<form action="<%=ctx %>/member/result/login_result.jsp" method="post">
-	<span class="meta">I       D:</span><input type="text" name="id"/><br/>
-	<span class="meta">비밀번호:</span><input type="password" name="pw"/><br/>
-	<br/><br/>
+	<div class="box">
+	<%
+	MemberService service =MemberServiceImpl.getInstance();
+	MemberBean member = new MemberBean(); 
+	
+	
+	%>
+		<form action="<%=ctx%>/member/result/logout_result.jsp" method="post">
 
-	
-	
-	<input type="submit" value="로그인"  />
-	<input type="reset" value="취소"  />
-	
-	</form>
-	
+			<input type="hidden"  name="id" value="<% service.getSession().getId(); %>"/> 
+			<input type="hidden"  name="pw" value="<% service.getSession().getPw(); %>"/>
+			<input type="submit" value="로그아웃" /> 
+			<input type="reset" value="취소" />
+
+		</form>
+
 	</div>
-	<jsp:include page="/global/footer.jsp"/>
+	<jsp:include page="/global/footer.jsp" />
 </body>
 </html>

@@ -28,7 +28,9 @@ select count(*) as account from member; -- count
 update member set pw='9999'
 where id='you';
 update member set profile_img=id||'.jpg';
-update MEMBER set reg='2015-07-21' where id ='Hong12'; 
+update member set email=id||'@test.com';
+update member set pw='NULL' to '1';
+update MEMBER set pw='1' where pw is NULL; 
 --Delete
 
 delete from member where set id='Hong';

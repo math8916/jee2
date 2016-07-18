@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.swing.JOptionPane;
+import javax.websocket.Session;
 
 
 /**
@@ -21,10 +22,11 @@ public interface MemberService {
 	//2.보기
 	public String show();
 	//3.수정
-	public String update(MemberBean mem );
+	public void update(MemberBean mem );
+
 	//4.삭제
 
-	public String delete(MemberBean mem);
+	public void delete(MemberBean mem);
 	
 	public int count();
 	
@@ -36,6 +38,7 @@ public interface MemberService {
 	
 	public String login(MemberBean member);
 	public MemberBean getSession();
+	public void logout(MemberBean member);
 		
 	}
 

@@ -19,13 +19,13 @@
 	
 	
 	String id = request.getParameter("id");
-	
+	String pw = request.getParameter("pw");
 	member.setId(id);
-	
-	String name = service.delete(member);
-	out.print(name);
-	
+	member.setPw(pw);
+	service.delete(member);
+	response.sendRedirect(ctx+"/index.jsp");
 	%>
+	
 	<div > <br/>해지 되었습니다
 	<a  href="<%= ctx %>/index.jsp" ><img src="<%= ctx %>/image/home.jpg" alt="" width="30px" height="30px"  /></a>
 <a  href="<%= ctx %>/member/service/member_controller.jsp" ><img src="<%= ctx %>/image/member.jpg" alt="" width="30px" height="30px"  /></a>

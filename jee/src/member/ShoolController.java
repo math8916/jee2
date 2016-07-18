@@ -65,7 +65,7 @@ public class ShoolController {
 				String[] inputArr1 = input2.split(",");
 				stu1.setId(inputArr1[0]);
 				stu1.setPw(inputArr1[1]);
-				JOptionPane.showMessageDialog(null, service.update(stu1));
+				service.update(stu1);
 				break;
 
 			case "5":
@@ -73,7 +73,7 @@ public class ShoolController {
 				String input3 = JOptionPane.showInputDialog(null, "삭제 아이디 입력");
 
 				stu2.setId(input3);
-				JOptionPane.showMessageDialog(null, service.delete(stu2));
+				service.delete(stu2);
 				// JOptionPane.showMessageDialog(null, service.delete());
 				break;
 			case"11":

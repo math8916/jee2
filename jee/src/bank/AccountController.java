@@ -59,7 +59,7 @@ public class AccountController {
 				String[] inputArr1 = input2.split(",");
 				stu1.setId(inputArr1[0]);
 				stu1.setPw(inputArr1[1]);
-				JOptionPane.showMessageDialog(null, memberService.update(stu1));
+				memberService.update(stu1);
 				break;
 			/*
 			 * AccountBean acc3 = new AccountBean(); String update =

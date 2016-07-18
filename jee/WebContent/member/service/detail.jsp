@@ -17,7 +17,7 @@
 	.font_bold {font-weight: bold;}
 	.bg_color_yellow{background-color: yellow}
 </style>
-</head>
+</head>as
 <body>
 
 <div class="box">

@@ -4,7 +4,6 @@ import java.util.List;
 
 import bank.AccountServiceImpl;
 
-
 public class MemberServiceImpl implements MemberService {
 
 	MemberDAO dao = MemberDAO.getInstans();
@@ -44,32 +43,29 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	// 3. 수정
-	public String update(MemberBean mem) {
-		String msg = "";
+	public void update(MemberBean mem) {
 
-		if (dao.update(mem) == 1) {
-			session=dao.findByID(mem.getId());
-			msg = "변경 성공";
-		} else {
-			msg = "변경 실패";
+		int result = dao.update(mem);
+
+		if (result == 1) {
+			session = this.findByID(mem.getId());
 		}
-		return msg;
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	// 4. 삭제
-	public String delete(MemberBean mem) {
+	public void delete(MemberBean mem) {
 		// TODO Auto-generated method stub
 		String msg = "";
 
 		if (dao.delete(mem) == 1) {
 			msg = "변경 성공";
+			session = null;
 		} else {
 			msg = "변경 실패";
 		}
-		return msg;
+
 	}
 
 	@Override
@@ -103,11 +99,11 @@ public class MemberServiceImpl implements MemberService {
 		String result = "";
 
 		if (dao.login(member)) {
-			
+
 			session = dao.findByID(member.getId());
 			result = session.getName();
 			accService.map();
-
+			System.out.println("impl"+session);
 		} else {
 			result = "";
 		}
@@ -119,11 +115,12 @@ public class MemberServiceImpl implements MemberService {
 		// TODO Auto-generated method stub
 		return session;
 	}
+
+	@Override
+	public void logout(MemberBean member) {
+		if (member.getId().equals(session.getId()) && member.getPw().equals(session.getPw())) {
+			session = null;
+		}
+
+	}
 }
-
-
-/*
- * String sqlCreate =" create table member(" + "ssn varchar2(20) ,"
- * +" name varchar2(20)," +"id varchar2(20) primary key," +"pw varchar2(20),"
- * +"gender varchar2(20)," +"age int," +"reg varchar2(20)" +")";
- */
