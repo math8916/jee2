@@ -3,15 +3,11 @@
 <%@ page import="member.MemberBean"%>
 <%@ page import="member.MemberService"%>
 <%@ page import="member.MemberServiceImpl"%>
-<%
-	String ctx = application.getContextPath();
-%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>회원 정보 수정</title>
-<link rel="stylesheet" href="<%=ctx%>/css/member.css" />
+<%	String ctx = application.getContextPath();%>
+
+<jsp:include page="../../global/top.jsp"/>
+<jsp:include page="../../global/header.jsp"/>
+<jsp:include page="../../global/nav.jsp"/>
 <style>
 #member_detail {
 	border: 1px solid gray;
@@ -38,10 +34,7 @@
 	background-color: yellow
 }
 </style>
-</head>
-<body>
-
-	<div class="box">
+<div class="box">
 		<!--  id,birth,name,reg,gender,profileImg -->
 		<h2>
 			회원상세 정보<br />
@@ -97,10 +90,6 @@
 		<input type="submit" value="수정" />
 		 <input type="reset" value="취소" />
 </form>
-		<a href="<%=ctx%>/global/main.jsp"><img
-			src="<%=ctx%>/image/home.jpg" alt="" width="30px" height="30px" /></a>
-		<a href="member_controller.jsp"><img
-			src="<%=ctx%>/image/member.jpg" alt="" width="30px" height="30px" /></a>
-	</div>
-</body>
-</html>
+		</div>
+<jsp:include page="../../global/footer.jsp"/>
+<jsp:include page="../../global/end.jsp"/>

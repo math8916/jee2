@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     <% String ctx = application.getContextPath(); %> 
 <style>
-h1   {color: blue;}
+
 h5   {border: 1px solid gray;width:500px;margin: 0 auto;} 
 p    {color: red;}
 span.meta{width: 200px;background-color:yellow;float: left} 

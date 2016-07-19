@@ -4,12 +4,9 @@
    <%@ page import="member.MemberService" %>
    <%@ page import="member.MemberServiceImpl" %>
      <% String ctx = application.getContextPath(); %> 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>상세정보</title>
-<link rel="stylesheet" href="<%=ctx %>/css/member.css" />
+<jsp:include page="../../global/top.jsp"/>
+<jsp:include page="../../global/header.jsp"/>
+<jsp:include page="../../global/nav.jsp"/>
 <style>
 	#member_detail{border: 1px solid gray; width: 90%;height: 400px;margin:0  auto;border-collapse:collapse;  }
 	#member_detail tr{border: 1px solid gray;height: 20%;}
@@ -17,9 +14,6 @@
 	.font_bold {font-weight: bold;}
 	.bg_color_yellow{background-color: yellow}
 </style>
-</head>as
-<body>
-
 <div class="box">
 <!--  id,birth,name,reg,gender,profileImg -->
 <h2>	회원상세 정보<br/></h2>
@@ -68,5 +62,5 @@
 <a  href="<%=ctx %>/global/main.jsp" ><img src="<%=ctx %>/image/home.jpg" alt="" width="30px" height="30px"  /></a>
 <a  href="member_controller.jsp" ><img src="<%=ctx %>/image/member.jpg" alt="" width="30px" height="30px"  /></a>
 </div>
-</body>
-</html>
+<jsp:include page="../../global/footer.jsp"/>
+<jsp:include page="../../global/end.jsp"/>
